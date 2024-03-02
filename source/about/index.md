@@ -21,16 +21,16 @@ This page is currently left for draft (or maybe disorganized note pad), about ma
 
 - 当 $\alpha(x) \rightarrow 0$，$\alpha(x) \cdot \beta(x) \rightarrow 0$ 时，有 $[1 + \alpha(x)]^{\beta(x)} \sim \alpha(x) \cdot \beta(x)$
 
-- 如果有 $f(x) \sim g(x)$，则有 $\int_0^x f(t) dt \sim \int_0^x g(t) dt$
+- 如果有 $f(x) \sim g(x)$，则有 $\displaystyle \int_0^x f(t) dt \sim \displaystyle \int_0^x g(t) dt$
 
-- 如果有 $f(x) \sim g(x)$，并且 $\lim \varphi(x) = 0$，则有 $\int_0^{\varphi(x)} f(t) dt \sim \int_0^{\varphi(x)} g(t) dt$
+- 如果有 $f(x) \sim g(x)$，并且 $\lim \varphi(x) = 0$，则有 $\displaystyle \int_0^{\varphi(x)} f(t) dt \sim \displaystyle \int_0^{\varphi(x)} g(t) dt$
 
 #### 无穷小的阶数
 
 - 若 $x \rightarrow 0$ 时 $f(x)$ 是无穷小量，并且 $f'(x)$ 是 $x$ 的 $k$ 阶无穷小（$k > 0$），则 $f(x)$ 是 $x$ 的 $k + 1$ 阶无穷小
     - 使用洛必达定理即可证明
 
-- 若 $f(x)$ 在 $U(0)$ 连续，且当 $x \rightarrow 0$ 时，$f(x)$ 是 $x$ 的 $m$ 阶无穷小，$\varphi(x)$ 是 $x$ 的 $n$ 阶无穷小：则当 $x \rightarrow 0$ 时，$F(x) = \int_{0}^{\varphi(x)} f(t) dt$ 是 $x$ 的 $n \cdot (m + 1)$ 阶无穷小
+- 若 $f(x)$ 在 $U(0)$ 连续，且当 $x \rightarrow 0$ 时，$f(x)$ 是 $x$ 的 $m$ 阶无穷小，$\varphi(x)$ 是 $x$ 的 $n$ 阶无穷小：则当 $x \rightarrow 0$ 时，$F(x) = \displaystyle \int_{0}^{\varphi(x)} f(t) dt$ 是 $x$ 的 $n \cdot (m + 1)$ 阶无穷小
 
 ### （一元函数）微分学
 
