@@ -6,7 +6,9 @@ tags: latex
 
 $\LaTeX$ Mathematical Symbols.
 
-{% pdf symbols.pdf %}
+<!-- more -->
+
+{% pdf https://www.cmor-faculty.rice.edu/~heinken/latex/symbols.pdf %}
 
 Source: 
 
