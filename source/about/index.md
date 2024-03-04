@@ -14,7 +14,7 @@ This page is currently left for draft (or maybe disorganized note pad), about ma
 
 #### 常用的等价无穷小
 
-- 当 $x \rightarrow 0$ 时，有 $x \sim \sin x \sim \tan x \sim \arcsin x \sim \arctan x \sim \ln (1 + x) \sim e^x - 1$
+$$x \rightarrow 0,\ x \sim \sin x \sim \tan x \sim \arcsin x \sim \arctan x \sim \ln (1 + x) \sim e^x - 1$$
 
 - 当 $x \rightarrow 0$ 时，有 $\alpha^x - 1 \sim x \ln \alpha$
 
@@ -113,15 +113,15 @@ $n$ 阶可导的偶函数在零点处的奇数阶导函数值 $f^{(2k + 1)}(0) =
 
 #### 常用的麦克劳林展开式
 
-- $\displaystyle e^x = 1 + x + \frac{1}{2!} x^2 + \cdots + \frac{1}{n!} x^n + o(x^n)$
+$$\displaystyle e^x = 1 + x + \frac{1}{2!} x^2 + \cdots + \frac{1}{n!} x^n + o(x^n)$$
 
-- $\displaystyle \sin x = x - \frac{1}{3!} x^3 + \frac{1}{5!} x^5 + \cdots + (-1)^{n - 1} \cdot \frac{1}{(2n - 1)!} x^{2n - 1} + o(x^{2n - 1})$
+$$\displaystyle \sin x = x - \frac{1}{3!} x^3 + \frac{1}{5!} x^5 + \cdots + (-1)^{n - 1} \cdot \frac{1}{(2n - 1)!} x^{2n - 1} + o(x^{2n - 1})$$
 
-- $\displaystyle \cos x = 1 - \frac{1}{2!} x^2 + \frac{1}{4!} x^4+ \cdots + (-1)^{n} \cdot \frac{1}{(2n)!} x^{2n} + o(x^{2n})$
+$$\displaystyle \cos x = 1 - \frac{1}{2!} x^2 + \frac{1}{4!} x^4+ \cdots + (-1)^{n} \cdot \frac{1}{(2n)!} x^{2n} + o(x^{2n})$$
 
-- $\displaystyle \ln (1 + x) = x - \frac{1}{2} x^2 + \frac{1}{3} x^3 + \cdots + (-1)^{n - 1} \cdot \frac{1}{n} x^{n} + o(x^{n})$
+$$\displaystyle \ln (1 + x) = x - \frac{1}{2} x^2 + \frac{1}{3} x^3 + \cdots + (-1)^{n - 1} \cdot \frac{1}{n} x^{n} + o(x^{n})$$
 
-- $\displaystyle (1 + x)^\alpha = 1 + \alpha x + \frac{\alpha (\alpha - 1)}{2!} + \cdots + \frac{\alpha(\alpha - 1)(\alpha - n + 1)}{n!} x^{n} + o(x^{n})$
+$$\displaystyle (1 + x)^\alpha = 1 + \alpha x + \frac{\alpha (\alpha - 1)}{2!} + \cdots + \frac{\alpha(\alpha - 1)(\alpha - n + 1)}{n!} x^{n} + o(x^{n})$$
 
 
 ## About computer sciences
