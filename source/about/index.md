@@ -4,6 +4,8 @@ layout: about
 # toc: true
 ---
 
+🀇🀏🀐🀘🀙🀡🀀🀁🀂🀃🀆🀅🀅 ... 🀫?
+
 Something about me :)
 
 This page is currently left for draft (or maybe disorganized note pad), about maths, computer sciences, byzantinology, theology, linguistics and so on :)
