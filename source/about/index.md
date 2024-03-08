@@ -86,3 +86,36 @@ $$\displaystyle (1 + x)^\alpha = 1 + \alpha x + \frac{\alpha (\alpha - 1)}{2!} +
 - `npm install` 安装 npm 包。使用 `--save` 参数将安装的包添加到 `package.json` 文件的 `dependencies` 列表中，在 npm 5.0.0 及更高版本中， `--save` 选项不再被需要，因为它现在是默认行为。使用 `-g` 参数全局安装。
 
 - `npm list` 查看当前已安装的所有包。这个命令会列出所有已安装的包及其依赖，如果只想查看顶级（也就是直接安装的）包，使用 `npm list --depth=0`。使用 `-g` 参数查看全局安装的包。
+
+### Windows 命令行常用工具以及 Windows Powershell
+
+Windows Powershell 的 Microsoft.PowerShell.Core 管理单元中文文档：
+
+<https://learn.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core>
+
+#### `Get-Command -Name` 获取别名
+
+```ps
+PS > Get-Command -Name g++
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Application     g++.exe                                            0.0.0.0    C:\mingw64\bin\g++.exe
+```
+
+`(Get-Command -Name g++).Source` 等同于 bash 中的 `which g++`，将在环境变量设置的目录里查找符合条件的文件，返回指令的绝对路径。
+
+#### 计算文件的哈希值
+
+使用 `certutil` 工具。
+
+```ps
+PS > certutil -hashfile .\hello.exe SHA256
+SHA256 的 .\hello.exe 哈希:
+17b6ba1b851e565769ec917b497e60b825f9ee79acd72f3ffed5a66777c79b66
+CertUtil: -hashfile 命令成功完成
+```
+
+可选的哈希函数有 `MD2`，`MD4`，`MD5`，`SHA1`，`SHA256`，`SHA384`，`SHA512`。
+
+更多选项使用命令 `certutil -hashfile -?` 查看。
