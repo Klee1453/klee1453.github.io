@@ -150,10 +150,28 @@ $$
 若方程 $F(x,y) = 0$ 确定 $y$ 与 $x$ 的函数关系式，则有：
 
 $$
-\frac{dy}{dx} = -\frac{F_x}{F_y}
+\frac{dy}{dx} = -\frac{F'_x}{F'_y}
 $$
 
-这个公式可以通过对方程 $F(x,y) = 0$ 两边微分（使用算子 $\displaystyle \frac{d}{dx}$）得到，必须始终牢记，在这里 $y$ 是 $x$ 的函数而非自由变量。
+上面的公式通过多元函数的全微分可以得到说明：
+
+$$
+\displaystyle dF = \frac{\partial F}{\partial x} dx + \frac{\partial F}{\partial y} dy
+
+\Rightarrow
+
+0 = \frac{\partial F}{\partial x} dx + \frac{\partial F}{\partial y} dy
+
+\Rightarrow
+
+\frac{dy}{dx} = -\frac{F'_x}{F'_y}
+$$
+
+对于确定的 $F$，通常通过对方程 $F(x,y) = 0$ 两边微分（使用算子 $\displaystyle \frac{d}{dx}$），然后展开 $\displaystyle \frac{dF}{dx}$ 求解关于 $\displaystyle \frac{dy}{dx}$ 的方程得到 $\displaystyle \frac{dy}{dx}$ ，必须始终牢记，在这里 $y$ 是 $x$ 的函数而非自由变量。
+
+> [TODO]
+>
+> 为什么当 $f(x) = 0$ 时 $\displaystyle \lim_{x \rightarrow 0} \frac{f(x)}{x} = 0$？
 
 **反函数求导法则**
 
