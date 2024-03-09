@@ -43,6 +43,176 @@ Archived to {% post_link single-variable-limit %}.
 **零点定理** 若 $f(x)$ 在 $[a,b]$ 上连续，且 $f(a) \cdot f(b) < 0$，则至少存在一个 $\xi \in [a,b]$ 使得 $f(\xi) = 0$。
 零点定理是上面的推论的一个特例。
 
+#### 导数与微分的定义
+
+##### 导数与微分的定义
+
+$$
+f'(x_0) = \lim_{\Delta x \rightarrow 0} \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x} = \lim_{x \rightarrow x_0} \frac{f(x) - f(x_0)}{x - x_0}
+$$
+
+根据此式，细分极限为左极限与右极限，可以得到单侧导数（左导数、右导数）的定义。
+
+函数 $f(x)$ 在 $x_0$ 可导，取决于上面的极限是否存在。函数 $f(x)$ 在 $x_0$ 可导，当且仅当函数 $f(x)$ 在 $x_0$ 左可导并且右可导。
+
+若 $\Delta y = f(x_0 + \Delta x) - f(x_0) = A \cdot \Delta x + \omicron(\Delta x)$，称函数 $f(x)$ 在 $x_0$ 可微，$A \cdot \Delta x$ 为该点的微分，用记号 $dy$ 表示。
+
+事实上，这是一种尝试线性近似函数变化的方法，这里的线性主部 $A$ 就是 $f(x)$ 在 $x_0$ 的导数值。即 $dy = A \cdot \Delta x = f'(x_0) \cdot \Delta x$。
+
+而又由于当 $f(x) = x$ 时，对任意一点 $x_0$ 都有 $dy = \Delta x$，这样，我们有 $dy = dx$，因此上面的式子也可以写成更为熟知的形式：
+
+$$
+dy = f'(x_0) \cdot dx
+$$
+
+函数 $f(x)$ 在某点 $x_0$ 的导数之几何意义为函数 $f(x)$ 在某点 $x_0$ 处切线的斜率，而函数 $f(x)$ 在某点 $x_0$ 的微分则代表函数 $f(x)$ 在某点 $x_0$ 处切线上的增量，高阶无穷小量 $\omicron(\Delta x)$ 则是其函数值增量与函数 $f(x)$ 在某点 $x_0$ 处切线上的增量之差。如下图所示。
+
+> [TODO]
+> 
+> fig. 06001200
+
+##### 可导一定连续、连续不一定可导
+
+> [TODO]
+> 
+> fig. meme
+
+**可导一定连续** 利用导数的定义式 $\displaystyle f'(x_0) = \lim_{x \rightarrow x_0} \frac{f(x) - f(x_0)}{x - x_0}$ 以及极限的四则运算法则之推论即可得证。
+
+**连续不一定可导** 常见的反例如 $f(x) = |x|$ 在 $x = 0$ 连续却不可导。事实上，对于含有绝对值因子的函数在零点的导数是否存在取决于其左右极限是否相等且为 0，这将在后面加以论述。
+
+往往需要考察可导函数 $f(x)$ 之导函数在某点的极限值，形如 $\displaystyle \lim_{x \rightarrow 0}f'(x)$，然而，函数 $f(x)$ 可导不能推出其导函数 $f'(x)$ 处处连续，甚至无法推出其导函数处处存在极限。经典的反例如下式所示：
+
+$$
+f(x) = \left\{ \begin{array}{lcl}
+\displaystyle x^2 \sin \frac{1}{x} & , & x \neq 0 \\
+0 & , & x = 0
+\end{array} \right.
+$$
+
+$f(x)$ 处处可导，然而 $\displaystyle \lim_{x \rightarrow 0}f'(x)$ 却不存在。
+
+因此，对于与导数有关的极限在使用洛必达法则时，较为稳妥的策略是：
+若 $f(x),\ g(x)$ 满足 $n$ 阶可导，则至多可以使用 $(n - 1)$ 次洛必达法则。
+若 $f(x),\ g(x)$ 满足 $n$ 阶连续可导，则至多可以使用 $n$ 次洛必达法则，这是因为连续可推得函数在某点的极限等于函数在某点的函数值。
+
+上面的结论是基于洛必达后极限需要存在的要求，以及函数连续时，可以直接利用 $\displaystyle \lim_{x\rightarrow x_0}f(x) = f(x_0)$ 求极限的性质。然而上面的两个结论并非在所有情况下一定是最恰当的，它实际上缩小了洛必达的可用范围。
+
+##### 基本初等函数的导函数
+
+$$
+\begin{array}{ll}
+    \displaystyle (C)' = 0 &
+    \displaystyle (x^\alpha)' = \alpha x^{\alpha - 1} \\
+    \displaystyle (a^x)' = a^x \ln a &
+    \displaystyle (e^x)' = e^x \\
+    \displaystyle (\log_a x)' = \frac{1}{x \ln a} & 
+    \displaystyle (\ln |x|)' = \frac{1}{x} \\
+    \displaystyle (\sin x)' = \cos x &
+    \displaystyle (\cos x)' = - \sin x \\
+    \displaystyle (\tan x)' = \sec^2 x &
+    \displaystyle (\cot x)' = - \csc^2 x \\
+    \displaystyle (\sec x)' = \sec x \tan x &
+    \displaystyle (\csc x)' = - \csc x \cot x \\
+    \displaystyle (\arcsin x)' = \frac{1}{\sqrt{1 - x^2}} &
+    \displaystyle (\arccos x)' = - \frac{1}{\sqrt{1 - x^2}} \\
+    \displaystyle (\arctan x)' = \frac{1}{1 + x^2} &
+    \displaystyle (\arccot x)' = - \frac{1}{1 + x^2}
+\end{array}
+$$
+
+##### 有理运算、复合运算的导函数
+
+$$
+\begin{array}{ll}
+    \displaystyle (u \pm v)' = uv & \\
+    \displaystyle (u \cdot v)' = u'v + v'u &
+    \displaystyle (\frac{u}{v})' = \frac{u'v - v'u}{v^2} \\
+    \displaystyle \frac{dz}{dx} = \frac{dz}{dy} \cdot \frac{dy}{dx} &
+    \displaystyle \{f[\varphi(x)]\}' = f'[\varphi(x)] \cdot \varphi'(x)
+\end{array}
+$$
+
+**链式法则** $\displaystyle \frac{dz}{dx} = \frac{dz}{dy} \cdot \frac{dy}{dx}$
+
+实际上，该法则可以看作是函数关系图中，$z$ 到 $x$ 的所有路径的「每一段路径两端点微分之比」乘积之和。只是在一元的这种情况中，只存在一条路径 $z \rightarrow y \rightarrow x$。
+
+下图所示为推广到多元情况下的链式法则。
+
+> [TODO]
+>
+> fig.chain-rule
+
+##### 隐函数、反函数、由参数方程定义的函数的导函数
+
+**隐函数求导法则**
+
+若方程 $F(x,y) = 0$ 确定 $y$ 与 $x$ 的函数关系式，则有：
+
+$$
+\frac{dy}{dx} = -\frac{F_x}{F_y}
+$$
+
+这个公式可以通过对方程 $F(x,y) = 0$ 两边微分（使用算子 $\displaystyle \frac{d}{dx}$）得到，必须始终牢记，在这里 $y$ 是 $x$ 的函数而非自由变量。
+
+**反函数求导法则**
+
+若 $x = \varphi (y)$ 在某区间单调可导，并且其导函数 $\varphi'(y) \neq 0$，则其反函数 $y = \varphi^{-1}(x)$ 也可导，其导函数为：
+
+$$
+\begin{array}{ll}
+    \displaystyle (\varphi^{-1})'(x) = \frac{1}{\varphi'(x)} &
+    \displaystyle \frac{dy}{dx} = \frac{1}{\frac{dx}{dy}}
+\end{array}
+$$
+
+实际上就是 $(\mathbb{R \rightarrow R}) \rightarrow (\mathbb{R \rightarrow R})$ 的两个算子 $'$ 与 $^{-1}$ 可交换。
+
+**参数方程定义的函数的求导法则**
+
+设 $y = f(x)$ 由参数方程 $x = \varphi (t)$，$y = \psi (t)$ 确定，并且 $\varphi'(t) \neq 0$，则有：
+
+$$
+\displaystyle \frac{dy}{dx} = \frac{\psi'(t)}{\varphi'(t)}
+$$
+
+这个公式可以通过对方程组 $x = \varphi (t)$，$y = \psi (t)$ 两边使用微分算子 $d$ 得到：
+
+$$
+\left\{ \begin{array}{l}
+\displaystyle dx = d\varphi (t) \\ 
+\displaystyle dy = d\psi (t)
+\end{array} \right.
+
+\Rightarrow
+
+\left\{ \begin{array}{l}
+\displaystyle dx = \varphi'(t)dt \\ 
+\displaystyle dy = \psi'(t)dt
+\end{array} \right.
+
+\Rightarrow
+
+\displaystyle \frac{dy}{dx} = \frac{\psi'(t)}{\varphi'(t)}
+$$
+
+##### 高阶导数、牛顿莱布尼茨公式
+
+牛顿莱布尼茨公式是导数的乘法法则在高阶导数上的推广：
+
+$$
+(uv)^{(n)} = \sum_{k = 0}^{n}C_n^k u^{(k)} v^{(n - k)}
+$$
+
+这说明算子 $'$ 的二项式展开与幂算子的二项式展开一致。
+
+根据导数的加减法法则，不难得到：
+
+$$
+(u \pm v)^{(n)} = u^{(n)} \pm v^{(n)}
+$$
+
+##### 判断函数的可导性
 
 ### （一元函数）积分学
 
@@ -206,6 +376,8 @@ ABCC 型与之对称。
 ##### ABBB 型
 
 ##### ACDE 型
+
+B < ACDE < C，例如 2 < 1345 < 3  
 
 #### 基本型之价值比较
 
