@@ -122,3 +122,15 @@ $$x \rightarrow 0,\ x \sim \sin x \sim \tan x \sim \arcsin x \sim \arctan x \sim
 
 拉格朗日中值定理（常用于极限式中存在结构相似的两项，且不同处夹逼所得之极限存在）
 - 可以用此方法证明：当 $\alpha(x) \rightarrow 0,\ \beta(x) \rightarrow 0$ 时，有 $e^{\alpha(x)} - e^{\beta(x)} \sim \alpha(x) - \beta(x)$
+
+## 一元函数极限的应用
+
+### 平面曲线的渐近线
+
+若 $\displaystyle \lim_{x \rightarrow -\infty} = A$ 或者 $\displaystyle \lim_{x \rightarrow +\infty} = A$，则称直线 $y = A$ 是平面曲线 $y = f(x)$ 的一条水平渐近线。
+
+若 $\displaystyle \lim_{x \rightarrow x_0^-} = \infty$ 或者 $\displaystyle \lim_{x \rightarrow x_0^+} = \infty$，则称直线 $x = x_0$ 是平面曲线 $y = f(x)$ 的一条垂直渐近线。
+
+对于直线 $y = ax + b$，如果有 $\displaystyle \lim_{x \rightarrow \infty} \frac{f(x)}{x} = a$，并且 $\displaystyle \lim_{x \rightarrow \infty} f(x) - ax = b$ （这两个极限可以同时或者 $x \rightarrow -\infty$ 或 $x \rightarrow +\infty$ 中的一种），则称直线 $y = ax + b$ 是平面曲线 $y = f(x)$ 的一条（斜）渐近线。
+
+斜渐近线等价于 $f(x) = ax + b + \omicron(1)$，这里 $\omicron(1)$ 表示当 $x \rightarrow \infty$，$\omicron(1)$ 所代表的余项是无穷小量。
