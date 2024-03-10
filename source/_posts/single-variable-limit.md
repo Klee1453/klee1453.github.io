@@ -123,6 +123,8 @@ $$x \rightarrow 0,\ x \sim \sin x \sim \tan x \sim \arcsin x \sim \arctan x \sim
 拉格朗日中值定理（常用于极限式中存在结构相似的两项，且不同处夹逼所得之极限存在）
 - 可以用此方法证明：当 $\alpha(x) \rightarrow 0,\ \beta(x) \rightarrow 0$ 时，有 $e^{\alpha(x)} - e^{\beta(x)} \sim \alpha(x) - \beta(x)$
 
+## 极限的保号性
+
 ## 一元函数极限的应用
 
 ### 平面曲线的渐近线

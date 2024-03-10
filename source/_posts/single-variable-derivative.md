@@ -229,6 +229,16 @@ $$
 
 简而言之，凑某点导数的定义。
 
+当 $\bigcirc \rightarrow 0$（代数式 $\bigcirc$ 需要能够同时满足 $\bigcirc \rightarrow 0^+$ 以及 $\bigcirc \rightarrow 0^-$），并且在某个去心邻域 $U^o(x_0)$ 内 $\bigcirc \neq 0$，则有：
+
+$$
+f'(x_0) = \lim_{\bigcirc \rightarrow 0} \frac{f(x_0 + \bigcirc) - f(x_0)}{\bigcirc} = \lim_{x \rightarrow x_0} \frac{f(x_0 + \bigcirc) - f(x_0)}{\bigcirc}
+$$
+
+关于对代数式 $\bigcirc$ 的限制，一个经典的**错误使用情形**是当 $x \rightarrow 0$ 时的 $\displaystyle \bigcirc = \sin\frac{1}{x}$，因为对于 $\displaystyle \sin\frac{1}{x}$，在零点的任意一个去心邻域，总是能找到 $k \in \mathbb{Z}^\star$ 使得零点 $\displaystyle x = \frac{1}{k\pi}$ 落在这个邻域内。
+
+另外一个经典的**错误使用情形**是 $\displaystyle \bigcirc = |x|$，因为 $|x|$ 并不能够 $\rightarrow 0^-$。
+
 ### 判断函数的可导性
 
 > [TODO]
