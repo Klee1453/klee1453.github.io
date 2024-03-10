@@ -135,4 +135,4 @@ $$x \rightarrow 0,\ x \sim \sin x \sim \tan x \sim \arcsin x \sim \arctan x \sim
 
 对于直线 $y = ax + b$，如果有 $\displaystyle \lim_{x \rightarrow \infty} \frac{f(x)}{x} = a$，并且 $\displaystyle \lim_{x \rightarrow \infty} f(x) - ax = b$ （这两个极限可以同时或者 $x \rightarrow -\infty$ 或 $x \rightarrow +\infty$ 中的一种），则称直线 $y = ax + b$ 是平面曲线 $y = f(x)$ 的一条（斜）渐近线。
 
-斜渐近线等价于 $f(x) = ax + b + \omicron(1)$，这里 $\omicron(1)$ 表示当 $x \rightarrow \infty$，$\omicron(1)$ 所代表的余项是无穷小量。
+求斜渐近线有时也可以想方设法将 $f(x)$ 拆分成 $f(x) = ax + b + \omicron(1)$，这里 $\omicron(1)$ 表示当 $x \rightarrow \infty$，$\omicron(1)$ 所代表的余项是无穷小量。这种方法往往需要对 $f(x)$ 进行恒等变换或者利用泰勒公式展开 $f(x)$（或它的一部分）至必要的阶数。

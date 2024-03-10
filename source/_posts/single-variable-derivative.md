@@ -211,7 +211,7 @@ $$
 (uv)^{(n)} = \sum_{k = 0}^{n}C_n^k u^{(k)} v^{(n - k)}
 $$
 
-这说明算子 $'$ 的二项式展开与幂算子的二项式展开一致。
+这在形式上与二项式 $(u + v)^n$ 的二项式展开一致。
 
 根据导数的加减法法则，不难得到：
 
@@ -235,7 +235,7 @@ $$
 f'(x_0) = \lim_{\bigcirc \rightarrow 0} \frac{f(x_0 + \bigcirc) - f(x_0)}{\bigcirc} = \lim_{x \rightarrow x_0} \frac{f(x_0 + \bigcirc) - f(x_0)}{\bigcirc}
 $$
 
-关于对代数式 $\bigcirc$ 的限制，一个经典的**错误使用情形**是当 $x \rightarrow 0$ 时的 $\displaystyle \bigcirc = \sin\frac{1}{x}$，因为对于 $\displaystyle \sin\frac{1}{x}$，在零点的任意一个去心邻域，总是能找到 $k \in \mathbb{Z}^\star$ 使得零点 $\displaystyle x = \frac{1}{k\pi}$ 落在这个邻域内。
+关于对代数式 $\bigcirc$ 的限制，一个经典的**错误使用情形**是当 $x \rightarrow 0$ 时的 $\displaystyle \bigcirc = \sin\frac{1}{x}$，因为对于 $\displaystyle \sin\frac{1}{x}$，在零的任意一个去心邻域，总是能找到 $k \in \mathbb{Z}^\star$ 使得其零点 $\displaystyle x = \frac{1}{k\pi}$ 落在这个邻域内。
 
 另外一个经典的**错误使用情形**是 $\displaystyle \bigcirc = |x|$，因为 $|x|$ 并不能够 $\rightarrow 0^-$。
 
