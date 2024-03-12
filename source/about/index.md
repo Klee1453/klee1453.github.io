@@ -92,6 +92,43 @@ CertUtil: -hashfile 命令成功完成
 
 更多选项使用命令 `certutil -hashfile -?` 查看。
 
+### About Linux
+
+#### APT 换源后出现由于没有公钥无法验证下列签名
+
+```bash
+root@ub22:/# apt-get update
+...
+获取:4 http://mirrors.aliyun.com/kali kali-rolling InRelease [41.5 kB]
+...
+错误:4 http://mirrors.aliyun.com/kali kali-rolling InRelease
+  由于没有公钥, 无法验证下列签名: NO_PUBKEY xxxxxxxx
+...
+正在读取软件包列表... 完成
+W: GPG 错误: http://mirrors.aliyun.com/kali kali-rolling InRelease: 由于没有公钥, 无法验证下列签名:  NO_PUBKEY xxxxxxxx
+E: 仓库 "http://mirrors.aliyun.com/kali kali-rolling InRelease" 没有数字签名.
+N: 无法安全地用该源进行更新, 所以默认禁用该源.
+N: 参见 apt-secure(8) 手册以了解仓库创建和用户配置方面的细节.
+```
+
+解决方案：`sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv xxxxxxxx`。将 `xxxxxxxx` 替换成报错中的实际公钥。
+
+解决上述报错后，可能会在 `apt-get update` 的时候得到报错：
+
+```bash
+W: http://mirrors.aliyun.com/kali/dists/kali-rolling/InRelease: 密钥存储在过时的 trusted.gpg 密钥环中（/etc/apt/trusted.gpg）, 请参见 apt-key(8) 的 DEPRECATION 一节以了解详情.
+```
+
+需要将密钥从旧的 apt 密钥工具转换为新的 apt 可信密钥格式。
+
+可以先尝试使用 `apt-key list gazebo`，在我遇到的情况下，这将返回与上面的警告类似但更详细的报错信息。
+
+```bash
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+```
+
+使用 `sudo cp /etc/apt/trusted.gpg /etc/apt/trusted.gpg.d` 即可。
+
 ## About Mahjong
 
 🀇🀇🀇🀈🀉🀊🀋🀌🀍🀎🀏🀏🀏 🀋
