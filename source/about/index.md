@@ -59,6 +59,8 @@ $$\displaystyle (1 + x)^\alpha = 1 + \alpha x + \frac{\alpha (\alpha - 1)}{2!} +
 
 - `npm list` 查看当前已安装的所有包。这个命令会列出所有已安装的包及其依赖，如果只想查看顶级（也就是直接安装的）包，使用 `npm list --depth=0`。使用 `-g` 参数查看全局安装的包。
 
+- `npm uninstall` 卸载 npm 包。这个命令会从 `node_modules` 目录中删除 npm 包，并且也会从 `package.json` 文件的 `dependencies` 列表中移除它。如果想要同时从 `package.json` 文件的 `devDependencies` 列表中移除它，你可以使用 `-D` 或 `--save-dev` 选项：
+
 ### Windows 命令行常用工具以及 Windows Powershell
 
 Windows Powershell 的 Microsoft.PowerShell.Core 管理单元中文文档：
@@ -128,6 +130,23 @@ Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (s
 ```
 
 使用 `sudo cp /etc/apt/trusted.gpg /etc/apt/trusted.gpg.d` 即可。
+
+## About linguistics
+
+### 为常见自然语言编码
+
+ISO 639-1 是国际标准化组织 ISO 639 语言代码标准的第一部分。它含有 184 个两字母的编码，用来标示世界上主要的语言。
+
+这些代码在很多地方都被用作语言的简写，例如：
+
+| | | | | | |
+|:-:|:-:|:-:|:-:|:-:|:-:|
+| 英语 | en | 中文 | zh | 日语 | ja |
+| 法语 | fr | 西班牙语 | es | 意大利语 | it |
+| 俄语 | ru | 希腊语 | el | 拉丁语 | la |
+
+详细的列表可以在维基百科中找到：
+<https://zh.wikipedia.org/wiki/ISO_639-1>
 
 ## About Mahjong
 
