@@ -10,6 +10,8 @@ tags:
 
 一种词法分析器的自动生成过程是 RE - NFA - DFA。
 
+<!-- more -->
+
 正则表达式（Regular Expression，RE）用于形式化地描述语法。例如，C 语言的标识符 `id` 可以使用 RE 定义为：
 
 ```text

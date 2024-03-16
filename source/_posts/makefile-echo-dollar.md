@@ -7,7 +7,9 @@ tags:
 
 ---
 
-（GNU Make 4.3）
+Single or double (quote), that is the question.
+
+<!-- more -->
 
 需要在 Makefile 中生成另一个 Makefile，遇到的问题是无法重定向输出字面的 `$()` 至需要生成的 Makefile 中，代码如下：
 

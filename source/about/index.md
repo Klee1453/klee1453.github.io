@@ -16,7 +16,7 @@ Archived to {% post_link single-variable-limit %}.
 
 ### （一元函数）微分学
 
-Archived to {% post_link single-variable-derivative %}.
+Archived to {% post_link single-variable-derivative %} and {% post_link mean-value-theorem %}.
 
 ### （一元函数）积分学
 

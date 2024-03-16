@@ -8,6 +8,8 @@ tags:
 
 往往 git 并不会使用系统代理，这时需要手动指定 git 使用 `${protocol}://localhost:${port}` 作为代理服务器。
 
+<!-- more -->
+
 如果使用的是 Clash，可以在设置中找到 Clash 提供的 socks5 与 http 端口。
 
 使用下面的命令设置全局 git 的代理。
