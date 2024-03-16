@@ -116,7 +116,7 @@ N: 参见 apt-secure(8) 手册以了解仓库创建和用户配置方面的细�
 解决上述报错后，可能会在 `apt-get update` 的时候得到报错：
 
 ```bash
-W: http://mirrors.aliyun.com/kali/dists/kali-rolling/InRelease: 密钥存储在过时的 trusted.gpg 密钥环中（/etc/apt/trusted.gpg）, 请参见 apt-key(8) 的 DEPRECATION 一节以了解详情.
+W: http://mirrors.aliyun.com/kali/dists/kali-rolling/InRelease: 密钥存储在过时的 trusted.gpg 密钥环中(/etc/apt/trusted.gpg), 请参见 apt-key(8) 的 DEPRECATION 一节以了解详情.
 ```
 
 需要将密钥从旧的 apt 密钥工具转换为新的 apt 可信密钥格式。
