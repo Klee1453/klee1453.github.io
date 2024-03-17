@@ -20,6 +20,8 @@ Archived to {% post_link single-variable-derivative %} and {% post_link mean-val
 
 ### （一元函数）积分学
 
+Archived to {% post_link single-variable-indefinite-integration %}.
+
 ### 泰勒展开
 
 设 $f(x)$ 在 $x = x_0$ 处 $n$ 阶可导，则有：
