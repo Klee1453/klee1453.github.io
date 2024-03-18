@@ -297,7 +297,7 @@ $$
     let &
     \displaystyle  \sqrt{a(x - \alpha)(x - \beta)} = t(x - \alpha) &
     i.e. &
-    \displaystyle x = \frac{\alpha t^2 - a\beta}{t^2  - a} \
+    \displaystyle x = \frac{\alpha t^2 - a\beta}{t^2  - a}
 \end{array}
 $$
 
@@ -309,6 +309,39 @@ $$
 
 ### 常见类型的不定积分
 
-#### 有理函数分式的不定积分
+#### 有理函数的不定积分
+
+所有的有理函数 $\displaystyle \frac{P_n(x)}{Q_m(x)}$ 都可以通过长除法化为多项式与有理真分式之和，有理真分式是指分子次数小于分母次数（即 $n < m$）的有理函数。
+
+一切的多项式 $Q_m(x) = a_m x^m + a_{m-1}x^{m-1} + \dots + a_0$ 都能够在实数域内作因式分解，将其分解为下面的形式：
+
+$$
+Q_m(x) = a_m (x - \alpha)^{r_\alpha} \dots (x - \omega)^{r_\omega} (x^2 + p x + q)^s \dots (x^2 + ux + v)^{t}
+$$
+
+而所有的既约有理真分式 $\displaystyle \frac{P_n(x)}{Q_m(x)}$ （分母 $Q_m(x)$ 的最高次项系数 $a_m = 1$）又可以唯一地分解为以下分式之和：
+
+$$
+\begin{array}{rl}
+    \displaystyle \frac{P_n(x)}{Q_m(x)} &=
+    \displaystyle \frac{A_1}{x - \alpha} + \frac{A_2}{(x - \alpha)^2} + \dots + \frac{A_{r_\alpha}}{(x - \alpha)^{r_\alpha}} \\
+    &+ \dots \\
+    &+ \displaystyle \frac{O_1}{x - \omega} + \frac{O_2}{(x - \omega)^2} + \dots + \frac{O_{r_\omega}}{(x - \omega)^{r_\omega}} \\
+    &+ \displaystyle \frac{P_1 x + Q_1}{x^2 + p x + q} + \frac{P_2 x + Q_2}{(x^2 + p x + q)^2} + \dots + \frac{P_s x + Q_s}{(x^2 + p x + q)^s} \\
+    &+ \dots \\
+    &+ \displaystyle \frac{U_1 x + V_1}{x^2 + u x + v} + \frac{U_2 x + V_2}{(x^2 + u x + v)^2} + \dots + \frac{U_t x + V_t}{(x^2 + u x + v)^t} 
+\end{array}
+$$
+
+通过待定系数法，或带特殊值解线性方程组的方法我们可以确定上式中的所有由大写字母表示的变量 $A_1, A_2, ..., U_t, V_t$。
+
+这样，我们只需要能够计算以下两个基本的不定积分，就能够计算所有的有理函数的不定积分。
+
+$$
+\begin{array}{c}
+    \displaystyle I_1 = \int \frac{1}{(x - a)^n} dx &
+    \displaystyle I_2 = \int \frac{Ax + B}{(x^2 + px + q)^n}dx
+\end{array}
+$$
 
 #### 三角函数的不定积分
