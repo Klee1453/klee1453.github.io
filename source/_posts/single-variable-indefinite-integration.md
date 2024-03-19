@@ -330,7 +330,7 @@ $$
 \begin{array}{ll}
     \displaystyle \int \frac{xe^x}{\sqrt{e^x - 1}}dx
     &= \displaystyle 2 \int x d\sqrt{e^x - 1} \\
-    &= \displaystyle 2x\sqrt{e^x - 1} - \boxed{\int \sqrt{e^x - 1} dx} \\
+    &= \displaystyle 2x\sqrt{e^x - 1} - 2\boxed{\int \sqrt{e^x - 1} dx} \\
 \end{array}
 $$
 
@@ -350,7 +350,7 @@ $$
 则有：
 
 $$
-\int \frac{xe^x}{\sqrt{e^x - 1}}dx = \displaystyle 2x\sqrt{e^x - 1} - 2 \arctan \frac{1}{\sqrt{e^x - 1}} + C
+\int \frac{xe^x}{\sqrt{e^x - 1}}dx = \displaystyle 2x\sqrt{e^x - 1} - 4 \arctan \frac{1}{\sqrt{e^x - 1}} + C
 $$
 
 **例7.** 求 $\displaystyle I = \int x \arctan x dx$
@@ -436,6 +436,8 @@ $$
 \end{array} \right.
 $$
 
+这个不定积分的重要性在于，所有形如 $\displaystyle \int \frac{1}{(x^2 + px + q)^n}dx$ 的不定积分都可以通过配方法转化为这个形式，而这是求解有理函数的不定积分通法的基石（之一）。
+
 ### 常见类型的不定积分
 
 #### 有理函数的不定积分
@@ -473,4 +475,99 @@ $$
 \end{array}
 $$
 
-#### 三角函数的不定积分
+下面将给出这两个积分的计算。
+
+$$
+\begin{array}{ll}
+    \displaystyle I_1 = \int \frac{1}{(x - a)^n} dx 
+    &= \displaystyle \int \frac{1}{(x - a)^n} d(x - a) \\
+    &= 
+    \left\{ \begin{array}{l}
+    \displaystyle \ln |x - a| + C & (n = 1) \\
+    \displaystyle \frac{1}{(1 - n)(x - a)^{n - 1}} + C & (n \geq 2)
+    \end{array} \right.
+\end{array}
+$$
+
+$$
+\begin{array}{ll}
+    \displaystyle I_2 = \int \frac{Ax + B}{(x^2 + px + q)^n}dx
+    &= \displaystyle \frac{Ax}{(x^2 + px + q)^n}dx + \frac{B}{(x^2 + px + q)^n}dx \\
+    &= \displaystyle \int \frac{\frac{A}{2}(2x + p) - \frac{Ap}{2}}{(x^2 + px + q)^n}dx + \int \frac{B}{(x^2 + px + q)^n}dx \\
+    &= \displaystyle \int \frac{\frac{A}{2}(2x + p)}{(x^2 + px + q)^n}dx - \int \frac{\frac{Ap}{2}}{(x^2 + px + q)^n}dx  + \int \frac{B}{(x^2 + px + q)^n}dx \\
+    &= \displaystyle \frac{A}{2} \int \frac{d(x^2 + px + q)}{(x^2 + px + q)^n} + \frac{2B - Ap}{2}\int \frac{1}{(x^2 + px + q)^n}dx \\
+    &= \displaystyle \frac{A}{2} \int \frac{d(x^2 + px + q)}{(x^2 + px + q)^n} + \frac{2B - Ap}{2}\int \frac{1}{[(x + \frac{p}{2})^2 + (q - \frac{p^2}{4})]^n}dx \\
+    &= \displaystyle \frac{A}{2} \boxed{\int \frac{d(x^2 + px + q)}{(x^2 + px + q)^n}} + \frac{2B - Ap}{2}\boxed{\int \frac{1}{[(x + \frac{p}{2})^2 + (\sqrt{\frac{4q - p^2}{2}})^2]^n}dx}
+\end{array}
+$$
+
+上面框起的两个不定积分都是我们已经计算过的。
+
+$$
+\begin{array}{rl}
+    \displaystyle \boxed{\int \frac{d(x^2 + px + q)}{(x^2 + px + q)^n}}
+    &= 
+    \left\{ \begin{array}{l}
+    \displaystyle \ln |x^2 + px + q| + C & (n = 1) \\
+    \displaystyle \frac{1}{(1 - n)(x^2 + px + q)^{n - 1}} + C & (n \geq 2)
+    \end{array} \right. \\
+
+    \boxed{\int \frac{1}{[(x + \frac{p}{2})^2 + (\sqrt{\frac{4q - p^2}{2}})^2]^n}dx}
+    &= 
+    \left\{ \begin{array}{l}
+    \displaystyle \frac{1}{\sqrt{\frac{4q - p^2}{2}}} \arctan \frac{x + \frac{p}{2}}{\sqrt{\frac{4q - p^2}{2}}} + C  & (n = 1) \\
+    \displaystyle \small{I_n = \frac{x}{(n - 1)(4q - p^2) (x^2 + \frac{4q - p^2}{2})^{n - 1}} + \frac{2n - 3}{(n - 1) (4q - p^2)} I_{n - 1}} & (n \geq 2)
+    \end{array} \right.
+\end{array}
+$$
+
+需要注意的是，虽然我们能够通过这个方法求解一切有理函数的不定积分，然而计算过程是十分复杂的，如果存在其他手段能够计算某个有理函数的不定积分，需要慎重考虑使用这个方法。
+
+#### 三角有理式的不定积分
+
+由 $u_1(x), u_2(x), \dots, u_k(x)$ 以及常数经过有限次四则运算得到的函数称为关于 $u_1(x), u_2(x), \dots, u_k(x)$ 的有理式，用 $R(u_1(x), u_2(x), \dots, u_k(x))$ 表示。
+
+对于不定积分 $\displaystyle \int R(\sin x, \cos x, \dots, \csc x) dx$ 通过换元 $\displaystyle t = \tan \frac{x}{2}$ （其中 $x \in (-\pi, \pi)$）即可将三角有理式转化为有理函数。这是因为三角函数的万能公式：
+
+{% asset_img tangent-half-angle-formula.png %}
+
+以及反正切函数的微分：
+
+$$
+\begin{array}{c}
+    \displaystyle t = \tan \frac{x}{2} & \Leftrightarrow & \displaystyle x = 2 \arctan t & , & x \in (-\pi, \pi)
+\end{array}
+\\
+\begin{array}{c}
+    \displaystyle dx = d(2 \arctan t) = \frac{2dt}{1 + t^2}
+\end{array}
+$$
+
+然而，计算有理函数的不定积分通常是复杂的，对于某些特定形式的三角有理式的积分，有一些其他方法可以简便地进行计算。下面列举苏德矿微积分中列出的几种常见情况及其解法。
+
+##### $\displaystyle \int \sin^n x \cos^m x dx$ 型，其中 $n,m$ 至少有一个奇数
+
+通过三角恒等式 $\sin^2 x + \cos^2 x = 1$ 以及凑微分即可将被积函数化为仅含单一三角函数的函数。
+
+##### $\displaystyle \int \sin^n x \cos^m x dx$ 型，其中 $n,m$ 均是偶数
+
+通过三角函数的二倍角公式降幂，化为上面的情形。
+
+##### $\displaystyle \int \sin nx \cos mx dx$ 型
+
+被积分函数中的 $\sin,\cos$ 可以随意排列组合，使用积化和差公式拆分为两个仅含单一三角函数的函数之不定积分。
+
+##### $\displaystyle \int R(\sin^2 x, \cos^2 x, \sin x\cos x)dx$ 型 
+
+令 $\tan x = t$，则有：
+
+$$
+\begin{array}{rl}
+    \displaystyle dx &= \displaystyle d\arctan x = \frac{1}{1 +  t^2}dt \\
+    \displaystyle \sin^2 x &= \displaystyle \frac{\sin^2 x}{\cos^2 x} \cos^2 x = \frac{t^2}{1 + t^2} \\
+    \displaystyle \cos^2 x &= \displaystyle \frac{1}{\sec^2 x} = \frac{1}{1 + t^2} \\
+    \displaystyle \sin x\cos x &= \displaystyle \frac{1}{2}\sin 2x = \frac{t}{1 + t^2} \\
+    \displaystyle \int R(\sin^2 x, \cos^2 x, \sin x\cos x)dx 
+    &= \displaystyle \int R(\frac{t^2}{1 + t^2}, \frac{1}{1 + t^2}, \frac{t}{1 + t^2}) \frac{1}{1 +  t^2}dt
+\end{array}
+$$
