@@ -307,6 +307,135 @@ $$
 
 ### 分部积分法
 
+利用 $\displaystyle \int u dv = uv - \int v du$ 简化原不定积分 $\displaystyle \int u dv$ 的计算，其基本原则是 $\displaystyle \int v du$ 比 $\displaystyle \int u dv$ 更容易计算。坊间流传这样的口诀：“*反对幂指三*”，指的是 $u$ 的选取按出现在口诀中的先后决定（即：反三角函数 & 对数函数 > 幂函数 > 指数函数 & 三角函数，在英语使用者中，与之对应的口诀为 *LIATE rule*）。实际上，对于多数能够直接使用分部积分法一步到位的题目，只需要都试一下就行了。
+
+分部积分法有以下三种常见的应用情形：
+
+第一种应用情形为上面已经讨论过的， $\displaystyle \int v du$ 比 $\displaystyle \int u dv$ 更容易计算；或是 $du = u'dx$ 中 $u'$ 的形式与 $v$ 的形式相似（常常是在 $u$ 为反三角函数的情况中），以达到化简不定积分计算的目的。
+
+**例5.** 求 $\displaystyle I = \int \ln x dx$
+
+$$
+\begin{array}{ll}
+    \displaystyle \int \ln x dx
+    &= \displaystyle x \ln x - \int x d\ln x \\
+    &= \displaystyle x \ln x - \int 1 dx \\
+    &= \displaystyle x \ln x - x + C
+\end{array}
+$$
+
+**例6.** 求 $\displaystyle I = \int \frac{xe^x}{\sqrt{e^x - 1}}dx$
+
+$$
+\begin{array}{ll}
+    \displaystyle \int \frac{xe^x}{\sqrt{e^x - 1}}dx
+    &= \displaystyle 2 \int x d\sqrt{e^x - 1} \\
+    &= \displaystyle 2x\sqrt{e^x - 1} - \boxed{\int \sqrt{e^x - 1} dx} \\
+\end{array}
+$$
+
+令 $\sqrt{e^x - 1} = t$，则 $x = \ln (t^2 + 1)$，计算框起部分的积分：
+
+$$
+\begin{array}{ll}
+    \displaystyle \boxed{\int \sqrt{e^x - 1} dx}
+    &= \displaystyle \int t d\ln (t^2 + 1) \\
+    &= \displaystyle \int \frac{2t^2}{t^2 + 1} dt \\
+    &= \displaystyle 2 \int \frac{1}{1 + (\frac{1}{t})^2} dt \\
+    &= \displaystyle 2 \arctan \frac{1}{t} + C \\
+    &= \displaystyle 2 \arctan \frac{1}{\sqrt{e^x - 1}} + C
+\end{array}
+$$
+
+则有：
+
+$$
+\int \frac{xe^x}{\sqrt{e^x - 1}}dx = \displaystyle 2x\sqrt{e^x - 1} - 2 \arctan \frac{1}{\sqrt{e^x - 1}} + C
+$$
+
+**例7.** 求 $\displaystyle I = \int x \arctan x dx$
+
+$$
+\begin{array}{ll}
+    \displaystyle \int x \arctan x dx
+    &= \displaystyle \frac{1}{2} \int \arctan x dx^2 \\
+    &= \displaystyle \frac{1}{2} x^2\arctan x - \frac{1}{2}\int x^2 d\arctan x \\
+    &= \displaystyle \frac{1}{2} x^2\arctan x - \frac{1}{2}\int \frac{x^2}{1 + x^2} dx \\
+    &= \displaystyle \frac{1}{2} x^2\arctan x - \frac{1}{2}\arctan \frac{1}{x} + C
+\end{array}
+$$
+
+第二种应用情形为不定积分经过若干次分部积分后，会再次产生原先的不定积分。这是由于有一些函数求导后的形式不会发生变化，例如一次情形的 $e^x$，两次情形的 $\sin x$ 与 $\cos x$。这样，我们通过解线性方程（组）就能够求得原不定积分的值。
+
+**例8.** 求 $\displaystyle I_1 = \int e^{ax}\cos(bx) dx$ 与 $\displaystyle I_2 = \int e^{ax}\sin(bx) dx$
+
+$$
+\begin{array}{ll}
+    \displaystyle \boxed{I_1} = \int e^{ax}\cos(bx) dx 
+    &= \displaystyle \frac{1}{a} \int \cos(bx) de^{ax} \\
+    &= \displaystyle \frac{1}{a} [\cos(bx) e^{ax} - \int e^{ax} (-b\sin(bx))dx] \\
+    &= \displaystyle \frac{1}{a} \cos(bx) e^{ax} + \frac{b}{a} \int e^{ax} \sin(bx)dx \\
+    & \boxed{= \displaystyle \frac{1}{a} \cos(bx) e^{ax} + \frac{b}{a} I_2} \\
+    \displaystyle \boxed{I_2} = \int e^{ax}\sin(bx) dx 
+    &= \displaystyle \frac{1}{a} \int \sin(bx) de^{ax} \\
+    &= \displaystyle \frac{1}{a} [\sin(bx) e^{ax} - \int e^{ax} (b\cos(bx))dx] \\
+    &= \displaystyle \frac{1}{a} \sin(bx) e^{ax} - \frac{b}{a} \int e^{ax} \cos(bx)dx \\
+    & \boxed{= \displaystyle \frac{1}{a} \sin(bx) e^{ax} - \frac{b}{a} I_1}
+\end{array}
+$$
+
+求解框起的有关 $I_1$，$I_2$ 的线性方程组，即可得到：
+
+$$
+\left\{ \begin{array}{l}
+\displaystyle I_1 = \int e^{ax}\cos(bx) dx = \frac{e^{ax}}{a^2 + b^2}(b\sin(bx) + a\cos(bx)) + C \\ 
+\displaystyle I_2 = \int e^{ax}\sin(bx) dx = \frac{e^{ax}}{a^2 + b^2}(a\sin(bx) - b\cos(bx)) + C
+\end{array} \right.
+$$
+
+
+第三种应用情形为形如 $\displaystyle I_n = \int f^n(x) dx$ 的不定积分，通过分部积分后能够对 $f^n(x)$ 进行降次，产生 $\displaystyle I_{n-1} = \int f^{n-1}(x) dx$，从而可以建立 $I_n$ 的递推关系式，求解原不定积分。
+
+**例9.** 求 $\displaystyle I_n = \int \frac{1}{(x^2 + a^2)^n} dx$，其中 $a \neq 0, n > 1 \in \mathbb{Z}$
+
+$$
+\begin{array}{ll}
+    \displaystyle \boxed{I_n} = \int \frac{1}{(x^2 + a^2)^n} dx
+    &= \displaystyle x \frac{1}{(x^2 + a^2)^n} - \int x d\frac{1}{(x^2 + a^2)^n} \\
+    &= \displaystyle x \frac{1}{(x^2 + a^2)^n} - \int x (-n) \frac{1}{(x^2 + a^2)^{n + 1}} 2x dx \\
+    &= \displaystyle x \frac{1}{(x^2 + a^2)^n} + 2n \int \frac{x^2}{(x^2 + a^2)^{n + 1}} dx \\
+    &= \displaystyle x \frac{1}{(x^2 + a^2)^n} + 2n \int \frac{x^2 + a^2 - a^2}{(x^2 + a^2)^{n + 1}} dx \\
+    &= \displaystyle x \frac{1}{(x^2 + a^2)^n} + 2n \int \frac{1}{(x^2 + a^2)^n} dx + 2n \int \frac{- a^2}{(x^2 + a^2)^{n + 1}} \\
+    & \boxed{= \displaystyle x \frac{1}{(x^2 + a^2)^n} + 2n I_n - 2a^2 n I_{n + 1}}
+\end{array}
+$$
+
+将被框起等式两边的所有 $n$ 都替换为 $n - 1$ 并进行化简，可以得到以下递推式：
+
+$$
+I_n = \frac{x}{2(n - 1)a^2(x^2 + a^2)^{n - 1}} + \frac{2n - 3}{2(n - 1)a^2} I_{n - 1}
+$$
+
+考虑初始情况 $\displaystyle I_1 = \int \frac{1}{x^2 + a^2}dx$：
+
+$$
+\begin{array}{ll}
+    \displaystyle \int \frac{1}{x^2 + a^2}dx 
+    &= \displaystyle \int  \frac{1}{a^2} \frac{1}{(\frac{x}{a})^2 + 1}dx \\
+    &= \displaystyle \frac{1}{a} \int \frac{1}{(\frac{x}{a})^2 + 1}d\frac{x}{a} \\
+    &= \displaystyle \frac{1}{a} \arctan \frac{x}{a} + C
+\end{array}
+$$
+
+则原不定积分可由以下递归式计算：
+
+$$
+\left\{ \begin{array}{l}
+\displaystyle I_1 = \frac{1}{a} \arctan \frac{x}{a} + C \\
+\displaystyle I_n = \frac{x}{2(n - 1)a^2(x^2 + a^2)^{n - 1}} + \frac{2n - 3}{2(n - 1)a^2} I_{n - 1} & (n \geq 2)
+\end{array} \right.
+$$
+
 ### 常见类型的不定积分
 
 #### 有理函数的不定积分
@@ -333,7 +462,7 @@ $$
 \end{array}
 $$
 
-通过待定系数法，或带特殊值解线性方程组的方法我们可以确定上式中的所有由大写字母表示的变量 $A_1, A_2, ..., U_t, V_t$。
+通过待定系数法，或代入特殊值解线性方程组的方法我们可以确定上式中的所有由大写字母表示的变量 $A_1, A_2, ..., U_t, V_t$。
 
 这样，我们只需要能够计算以下两个基本的不定积分，就能够计算所有的有理函数的不定积分。
 
