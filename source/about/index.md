@@ -6,7 +6,7 @@ layout: about
 
 Something about me :)
 
-This page is currently left for draft (or maybe disorganized note pad), about maths, computer sciences, byzantinology, theology, linguistics and so on :)
+This page is currently left for draft (or maybe disorganized note pad), about maths, computer sciences, byzantinology, linguistics and so on :)
 
 ## About maths
 
@@ -132,6 +132,70 @@ Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (s
 ```
 
 使用 `sudo cp /etc/apt/trusted.gpg /etc/apt/trusted.gpg.d` 即可。
+
+## About byzantinology (Byzantine history)
+
+在 <bilibili.com> 入门罗马史。
+
+罗马共和国史：
+
+[【罗马史合集】罗马是如何从城邦变成帝国的？ - 训练有素的将军](https://www.bilibili.com/video/BV1wd4y1h7pP/)
+
+元首制时期：
+
+三世纪危机：
+
+多米那特制时期：
+
+查士丁尼王朝：
+
+[【合集】重现帝国荣光！3个小时看完罗马传奇统帅贝利撒留的一生 - 老喵猫喵](https://www.bilibili.com/video/BV1834y1o7eW/)
+
+希拉克略王朝 & 二十年无政府时期：
+
+[合集·十字路口的东罗马（C.E.641-717） - 青悠闲人](https://space.bilibili.com/358349453/channel/collectiondetail?sid=160823)
+
+伊苏里亚王朝 & 第一次圣像破坏运动：
+
+[合集·变革与斗争中的罗马（C.E.717-802） - 青悠闲人](https://space.bilibili.com/358349453/channel/collectiondetail?sid=924370)
+
+阿莫里亚王朝 & 第二次圣像破坏运动：
+
+[合集·第二次圣像破坏运动（C.E.802-867） - 青悠闲人](https://space.bilibili.com/358349453/channel/seriesdetail?sid=2603754)
+
+马其顿王朝：
+
+杜卡斯王朝：
+
+[{编年地图史}拜占庭是怎样陷入11世纪危机中的（1）—马其顿王朝末期和伊萨克-科穆宁篇 - 老喵猫喵](https://www.bilibili.com/video/BV11541157j8/)
+
+[杜卡斯家族真的有那么废吗？拜占庭是怎样陷入11世纪危机中的（2）—君士坦丁·杜卡斯&曼齐克特战役篇 - 老喵猫喵](https://www.bilibili.com/video/BV1tZ4y1V7E8/)
+
+[小亚细亚没了！11世纪危机中的拜占庭（3）—“内战内行，外战外行”的杜卡斯 - 老喵猫喵](https://www.bilibili.com/video/BV1zy4y1r7mZ/)
+
+科穆宁王朝 & 第一、第二、第三次十字军东征：
+
+[【合集】一口气看完《阿莱克修斯传》所讲述传奇的拜占庭皇帝阿莱克修斯·科穆宁的一生 - 老喵猫喵](https://www.bilibili.com/video/BV1mN411Q7Mo/)
+
+[【合集】拜占庭帝国的余晖：一口气看完科穆宁王朝1118-1182年的历史 - 老喵猫喵](https://www.bilibili.com/video/BV1J64y18799/)
+
+[【合集】3个小时一口气看完萨拉丁与第三次十字军东征的故事（1169-1192） - 老喵猫喵](https://www.bilibili.com/video/BV1a5411X79T/)
+
+第四次十字军东征 & 尼西亚王朝：
+
+[【合集】地图详解从1204年第四次十字军东征到拉丁帝国建立再到1261年尼西亚帝国重建东罗马帝国的整个过程 - 老喵猫喵](https://www.bilibili.com/video/BV1334y177jM/)
+
+巴列奥略王朝：
+
+[1453年君士坦丁堡的陷落可以避免吗（一） - asherhoa](https://www.bilibili.com/video/BV1J64y1H76W/)
+
+[1453年君士坦丁堡的陷落可以避免吗（二） - asherhoa](https://www.bilibili.com/video/BV1sQ4y1J7tR/)
+
+[1453年君士坦丁堡的陷落可以避免吗（三） - asherhoa](https://www.bilibili.com/video/BV12K411v72Q/)
+
+[1453年君士坦丁堡的陷落可以避免吗（四） - asherhoa](https://www.bilibili.com/video/BV1aW421A7sq/)
+
+奥斯曼帝国：
 
 ## About linguistics
 
