@@ -167,8 +167,6 @@ Tiger Alg.3.13
 
 #### 构造预测分析表
 
-src: <https://www.cs.york.ac.uk/fp/lsa/>
-
 以非终结符为行，终结符为列建表。预测分析表初始是空的。检定文法中的每一个产生式 $A \rightarrow \alpha$，按以下的规则填充分析表的 $A$ 行某列单元格：
 
 ```cpp
@@ -184,13 +182,16 @@ for each production "A -> \alpha"
 
 ```cpp
 for each production "A -> \alpha"
-    if a \in first(\alpha) then 
+    for each a \in first(\alpha)
         add "A -> \alpha" to T[A, a]
-    if \alpha is Nullable and a \in follow(A) then 
+    if \alpha is Nullable then
+        for each a \in follow(A) then 
         add "A -> \alpha" to T[A, a]
 ```
 
 如图所示（注意每一张子图中的算法最后一行有一点错误，应该为 `add "A -> \alpha" to T[n , b]`）：
+
+src: <https://www.cs.york.ac.uk/fp/lsa/>
 
 {% asset_img parse-table.png %}
 

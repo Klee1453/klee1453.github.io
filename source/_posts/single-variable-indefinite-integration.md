@@ -571,3 +571,101 @@ $$
     &= \displaystyle \int R(\frac{t^2}{1 + t^2}, \frac{1}{1 + t^2}, \frac{t}{1 + t^2}) \frac{1}{1 +  t^2}dt
 \end{array}
 $$
+
+### 不常见的特殊类型不定积分
+
+#### 分段函数的不定积分
+
+我们已经讨论过，不定积分是原函数的反导数，这就意味着原函数必定是连续的。在原函数存在的情况下，不定积分可以由以下方法计算：
+- 在分段的区间内分别求不定积分，然后考虑原函数的连续性
+- 利用变限积分进行计算
+
+**例10.** 求 $\displaystyle I = \int e^{|x|} dx$
+
+由于：
+
+$$
+\displaystyle e^{|x|} = 
+\left\{ \begin{array}{l}
+\displaystyle e^{-x} & (x < 0) \\
+\displaystyle e^{x} & (x \geq 0)
+\end{array} \right. 
+$$
+
+在两个区间内分别积分：
+
+$$
+I = F(x) = 
+\displaystyle \int e^{|x|} dx = 
+\left\{ \begin{array}{l}
+\displaystyle \int e^{-x} dx & (x < 0) \\
+\displaystyle \int e^{x} dx  & (x \geq 0)
+\end{array} \right. 
+=
+\left\{ \begin{array}{l}
+\displaystyle -e^{-x} + C_1 & (x < 0) \\
+\displaystyle e^x + C_2     & (x \geq 0)
+\end{array} \right. 
+$$
+
+考虑原函数的连续性，有：
+
+$$
+\begin{array}{ll}
+    
+    \left\{ \begin{array}{l}
+    \displaystyle \lim_{x\rightarrow 0^-} F(x) = F(0) \\
+    \displaystyle \lim_{x\rightarrow 0^+} F(x) = F(0) \\
+    \end{array} \right. 
+
+    &\Rightarrow
+
+    \left\{ \begin{array}{l}
+    \displaystyle \lim_{x\rightarrow 0^-} (-e^{-x} + C_1) = 1 + C_2 \\
+    \displaystyle \lim_{x\rightarrow 0^+} (e^x + C_2) = 1 + C_2 \\
+    \end{array} \right. 
+
+    \\
+
+    &\Rightarrow
+
+    \left\{ \begin{array}{l}
+    \displaystyle -1 + C_1 = 1 + C_2 \\
+    \displaystyle 1 + C_2 = 1 + C_2 \\
+    \end{array} \right. 
+
+    \\&\Rightarrow
+
+    C_2 = -2 + C_1
+\end{array}
+$$
+
+综上：
+
+$$
+I = \int e^{|x|} dx = 
+\left\{ \begin{array}{l}
+\displaystyle -e^{-x} + C  & (x < 0) \\
+\displaystyle e^x + -2 + C & (x \geq 0)
+\end{array} \right. 
+$$
+
+除此之外，可以利用变限积分计算这个不定积分：注意到 $e^{|x|}$ 是一个连续函数，因此，一定存在一个原函数 $\displaystyle F(x) = \int_0^x e^{|t|} dt$，只需要计算这个变上限积分即可得到原不定积分 $I = F(x) + C$。
+
+$$
+I = I = F(x) + C = 
+\left\{ \begin{array}{l}
+\displaystyle \int_0^x e^{-t} dt & (t < 0) \\
+\displaystyle \int_0^x e^t dt    & (t \geq 0)
+\end{array} \right.
++ C 
+
+=
+
+\left\{ \begin{array}{l}
+\displaystyle e^x - 1    & (t < 0) \\
+\displaystyle 1 - e^{-x} & (t \geq 0)
+\end{array} \right.
+
++ C 
+$$
