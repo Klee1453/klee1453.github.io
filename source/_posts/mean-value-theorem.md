@@ -141,4 +141,6 @@ $$
 
 # 积分中值定理
 
+对积分中值定理的更为详细的介绍以及推导可见 {% post_link single-variable-definite-integration %} 中 **微积分基本定理** 一节。
+
 > [TODO]

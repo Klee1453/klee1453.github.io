@@ -653,7 +653,7 @@ $$
 除此之外，可以利用变限积分计算这个不定积分：注意到 $e^{|x|}$ 是一个连续函数，因此，一定存在一个原函数 $\displaystyle F(x) = \int_0^x e^{|t|} dt$，只需要计算这个变上限积分即可得到原不定积分 $I = F(x) + C$。
 
 $$
-I = I = F(x) + C = 
+I = F(x) + C = 
 \left\{ \begin{array}{l}
 \displaystyle \int_0^x e^{-t} dt & (t < 0) \\
 \displaystyle \int_0^x e^t dt    & (t \geq 0)

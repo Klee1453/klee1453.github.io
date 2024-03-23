@@ -20,7 +20,7 @@ Archived to {% post_link single-variable-derivative %} and {% post_link mean-val
 
 ### （一元函数）积分学
 
-Archived to {% post_link single-variable-indefinite-integration %}.
+Archived to {% post_link single-variable-indefinite-integration %}, {% post_link single-variable-definite-integration %}, and.
 
 ### 泰勒展开
 
@@ -54,6 +54,14 @@ $$\displaystyle (1 + x)^\alpha = 1 + \alpha x + \frac{\alpha (\alpha - 1)}{2!} +
 
 
 ## About computer sciences
+
+### Git
+
+#### 修改 commit 记录的描述
+
+使用 `git commit --amend` 即可修改上一次 commit 记录的描述。
+
+如果需要修改倒数第 n 个 commit 记录的描述，则需要通过 `git rebase -i` 先变基到 `HEAD~(n+1)`，然后在打开的文本编辑器内找到你想要修改的 commit，将行首的 `pick` 改为 `reword`，这将再次打开一个文本编辑器对选定的 commit 描述进行修改。最后，通过 `git rebase --continue` 回到 `HEAD`，这可能会造成远程仓库的历史记录与本地不一致。
 
 ### NPM
 
@@ -133,7 +141,7 @@ Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (s
 
 使用 `sudo cp /etc/apt/trusted.gpg /etc/apt/trusted.gpg.d` 即可。
 
-## About byzantinology (Byzantine history)
+## About Byzantine history
 
 在 <bilibili.com> 入门罗马史。
 
