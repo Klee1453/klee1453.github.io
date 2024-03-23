@@ -572,6 +572,25 @@ $$
 \end{array}
 $$
 
+##### $\displaystyle \int \frac{a\sin x + b\cos x}{c\sin x + d\cos x} dx$ 型
+
+待定系数法，令：
+
+$$
+\int \frac{A(c \cos x - d \sin x) + B(c\sin x + d\cos x)}{c\sin x + d\cos x} dx = \int \frac{a\sin x + b\cos x}{c\sin x + d\cos x} dx
+$$
+
+而等式左边的积分是易于计算的：
+
+$$
+\begin{array}{ll}
+    \displaystyle L.H.S. &= \displaystyle \int \frac{A(c \cos x - d \sin x) + B(c\sin x + d\cos x)}{c\sin x + d\cos x} dx \\
+    &= \displaystyle A \int \frac{c \cos x - d \sin x}{c\sin x + d\cos x} dx + B \int \frac{c\sin x + d\cos x}{c\sin x + d\cos x} dx \\
+    &= \displaystyle A \int \frac{d(c\sin x + d\cos x)}{c\sin x + d\cos x} + Bx + C \\
+    &= \displaystyle A \ln |c\sin x + d\cos x| + Bx + C
+\end{array}
+$$
+
 ### 不常见的特殊类型不定积分
 
 #### 分段函数的不定积分

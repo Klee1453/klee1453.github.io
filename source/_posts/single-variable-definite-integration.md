@@ -85,7 +85,7 @@ $$
 对于区间 $[a, b]$ 的每一种划分，以及每一个内点 $c_k$ 的选择，都有：
 
 $$
-\begin{array}
+\begin{array}{ll}
     \displaystyle \min_{x \in [a,b]} f \cdot (b - a) &= \displaystyle \min_{x \in [a,b]} f \cdot \sum_{k = 1}^n \Delta x_k \\
     &= \displaystyle \sum_{k = 1}^n \min_{x \in [a,b]} f \cdot \Delta x_k \\
     &\leq \displaystyle \sum_{k = 1}^n f(c_k) \cdot \Delta x_k \\
@@ -113,7 +113,7 @@ $$
 *证明.* 
 
 $$
-\begin{array}
+\begin{array}{ll}
     \displaystyle F'(x) &= \displaystyle \lim_{h \rightarrow 0}\frac{F(x + h) - F(x)}{h} = \lim_{h \rightarrow 0}[\frac{1}{h}(\int_a^{x+h}f(t)dt - \int_a^{x}f(t)dt)] \\
     &= \displaystyle \lim_{h \rightarrow 0}[\frac{1}{h}\int_x^{x+h}f(t)dt]
 \end{array}
@@ -124,8 +124,8 @@ $$
 根据积分中值定理，$\displaystyle \frac{1}{h}\int_x^{x+h}f(t)dt$ 在取极限之前是 $f$ 在 $(x, x+h)$ 的取值之一。即：
 
 $$
-\begin{array}
-    \exist c \in (x, x+h) & s.t. & \frac{1}{h}\int_x^{x+h}f(t)dt = f(c)
+\begin{array}{c}
+    \exists c \in (x, x+h) & s.t. & \frac{1}{h}\int_x^{x+h}f(t)dt = f(c)
 \end{array}
 $$
 
@@ -134,14 +134,14 @@ $$
 由函数 $f(x)$ 的连续性，可知：
 
 $$
-\begin{array}
+\begin{array}{ll}
     \displaystyle F'(x) &= \displaystyle \lim_{h \rightarrow 0}\frac{F(x + h) - F(x)}{h} = \displaystyle \lim_{h \rightarrow 0}[\frac{1}{h}\int_x^{x+h}f(t)dt] \\
-    &= \displaystyle \lim_{h \rightarrow 0}f(c) = f(x) & \blacksquare
+    &= \displaystyle \lim_{h \rightarrow 0}f(c) = \lim_{h \rightarrow 0}f(x) = f(x) & \blacksquare
 \end{array}
 $$
 
 **牛顿-莱布尼兹公式（微积分基本定理第二部分、求值定理）** 若 $f$ 是区间 $[a, b]$ 上的**连续函数**，而 $F$ 是 $f$ 在 $[a, b]$ 上的任意反导数，则有 $\displaystyle \int_a^b f(x) dx = F(b) - F(a)$。
 
-拆分这个定积分到以 $x$ 分割的两个区间上计算，根据微积分基本定理即可证明这个公式。
+拆分这个定积分到以 $x$ 为分界的两个区间上计算，根据微积分基本定理即可证明这个公式。
 
 ## 定积分的计算
