@@ -68,9 +68,13 @@ $$
 
 证明可由可积的判断准则3得出。
 
-**定理2** 若 $f(x)$ 在闭区间 $[a, b]$ 只有有限个间断点并且有界，则 $f(x)$ 在 $[a, b]$ 可积。
+**定理2.a** 若 $f(x)$ 在闭区间 $[a, b]$ 只有有限个间断点并且有界，则 $f(x)$ 在 $[a, b]$ 可积。
 
 证明同样可由可积的判断准则3得出。
+
+这个定理有一个更加常用的结论：
+
+**定理2.b** 若 $f(x)$ 在闭区间 $[a, b]$ 只有有限个第一类间断点，则 $f(x)$ 在 $[a, b]$ 可积。
 
 **定理3** 若 $f(x)$ 在闭区间 $[a, b]$ 上单调，则 $f(x)$ 在 $[a, b]$ 可积。
 
@@ -108,7 +112,7 @@ $$
 
 积分中值定理的几何意义在于，连续函数 $f$ 在任意的闭区间上必定至少取到一次它在这个区间上的平均值 $\bar{f}$。
 
-**微积分基本定理** 若 $f$ 是区间 $[a, b]$ 上的**连续函数**，则 $F(x) = \int_a^x f(t) dt$ 在 $[a, b]$ 上是连续的，并且在 $(a, b)$ 上是可微的，并且它的导数就是 $f(x)$，即 $\displaystyle \frac{d}{dx}\int_a^x f(t) dt = f(x)$。
+**微积分基本定理** 若 $f$ 是区间 $[a, b]$ 上的**连续函数**，则 $\displaystyle F(x) = \int_a^x f(t) dt$ 在 $[a, b]$ 上是连续的，并且在 $(a, b)$ 上是可微的，并且它的导数就是 $f(x)$，即 $\displaystyle \frac{d}{dx}\int_a^x f(t) dt = f(x)$。
 
 *证明.* 
 
@@ -145,3 +149,152 @@ $$
 拆分这个定积分到以 $x$ 为分界的两个区间上计算，根据微积分基本定理即可证明这个公式。
 
 ## 定积分的计算
+
+### 利用被积函数的奇偶性
+
+**例1.** 若 $\displaystyle f(x) = \frac{x}{1 + \cos^2 x} - \int_{-\pi}^{\pi} f(x)\sin x dx$，求 $f(x)$
+
+等式两边同时乘以 $\sin x$，然后在 $[-\pi, \pi]$ 积分：
+
+$$
+\begin{array}{rl}
+    \displaystyle f(x) &= \displaystyle \frac{x}{1 + \cos^2 x} - \int_{-\pi}^{\pi} f(x)\sin x dx \\
+    \displaystyle \int_{-\pi}^{\pi} f(x)\sin x dx &= \displaystyle \int_{-\pi}^{\pi} \frac{x\sin x}{1 + \cos^2 x} dx - \int_{-\pi}^{\pi} [\int_{-\pi}^{\pi} f(x)\sin x dx]\sin t dt \\
+    &= \displaystyle \int_{-\pi}^{\pi} \frac{x\sin x}{1 + \cos^2 x} dx - 0 \\
+    &= \displaystyle 2 \int_{0}^{\pi} \frac{x\sin x}{1 + \cos^2 x} dx \\
+    &= \displaystyle \pi \int_{0}^{\pi} \frac{\sin x}{1 + \cos^2 x} dx \\
+    &= \displaystyle \pi \int_{0}^{\pi} \frac{-d\cos x}{1 + \cos^2 x} \\
+    &= \displaystyle -\pi \arctan \cos x \Big\vert^{\pi}_0 = \frac{\pi^2}{2}
+\end{array}
+$$
+
+其中第五个等号 $\displaystyle \int_{0}^{\pi} xf(\sin x)dx = \frac{\pi}{2}\int_{0}^{\pi} f(\sin x)dx$ 可以使用区间复现法进行证明。
+
+
+### 定积分的分部积分法
+
+
+
+### 区间复现法
+
+区间复现法是对定积分 $\displaystyle \int_a^b f(x) dx$ 的换元 $x = a + b - t$ ，它将原积分转化为 $\displaystyle \int_a^b f(a + b - t) dt$。
+
+然后，将原积分与换元后得到的积分相加除以二，以达到简化被积函数的目的。
+
+**例3.** 证明：$\displaystyle \int_{0}^{\pi} xf(\sin x)dx = \frac{\pi}{2}\int_{0}^{\pi} f(\sin x)dx$
+
+令 $\displaystyle x = \pi - t$：
+
+$$
+\begin{array}{ll}
+    \displaystyle \int_{0}^{\pi} xf(\sin x)dx
+    &= \displaystyle \int_{0}^{\pi} (\pi - t)f(\sin (\pi - t))dt \\
+    &= \displaystyle \int_{0}^{\pi} \pi f(\sin t)dt - \int_{0}^{\pi} t f(\sin t)dt
+\end{array}
+$$
+
+则：
+
+$$
+\begin{array}{ll}
+    \displaystyle \int_{0}^{\pi} xf(\sin x)dx
+    &= \displaystyle \frac{1}{2}[xf(\sin x)dx + \int_{0}^{\pi} \pi f(\sin x)dx - \int_{0}^{\pi} x f(\sin x)dx] \\
+    &= \displaystyle \frac{1}{2} \int_{0}^{\pi} \pi f(\sin x)dx \\
+    &= \displaystyle \frac{\pi}{2} \int_{0}^{\pi} f(\sin x)dx
+\end{array}
+$$
+
+
+**例4.** 求 $\displaystyle I = \int_{\frac{-\pi}{2}}^{\frac{\pi}{2}} \frac{e^x}{1 + e^x} \sin^4 x dx$
+
+令 $\displaystyle x = - \frac{\pi}{2} + \frac{\pi}{2} - t = -t$：
+
+$$
+\begin{array}{ll}
+    \displaystyle \int_{\frac{-\pi}{2}}^{\frac{\pi}{2}} \frac{e^x}{1 + e^x} \sin^4 x dx
+    &= \displaystyle \int_{\frac{-\pi}{2}}^{\frac{\pi}{2}} \frac{e^{-t}}{1 + e^{-t}} \sin^4 (-t) dt \\
+    &= \displaystyle \int_{\frac{-\pi}{2}}^{\frac{\pi}{2}} \frac{1}{e^t + 1} \sin^4 t dt \\
+    &= \displaystyle \int_{\frac{-\pi}{2}}^{\frac{\pi}{2}} \frac{1}{e^x + 1} \sin^4 x dx
+\end{array}
+$$
+
+则：
+
+$$
+\begin{array}{ll}
+    \displaystyle \int_{\frac{-\pi}{2}}^{\frac{\pi}{2}} \frac{e^x}{1 + e^x} \sin^4 x dx
+    &= \displaystyle \frac{1}{2}(\int_{\frac{-\pi}{2}}^{\frac{\pi}{2}} \frac{e^x}{1 + e^x} \sin^4 x dx + \int_{\frac{-\pi}{2}}^{\frac{\pi}{2}} \frac{1}{e^x + 1} \sin^4 x dx) \\
+    &= \displaystyle \frac{1}{2}\int_{\frac{-\pi}{2}}^{\frac{\pi}{2}} \sin^4 x dx \\
+    &= \displaystyle \int_{0}^{\frac{\pi}{2}} \sin^4 x dx \\
+    &= \displaystyle \frac{3}{4} \cdot \frac{1}{2} \cdot \frac{\pi}{2} \\
+    &= \displaystyle \frac{3\pi}{16}
+\end{array}
+$$
+
+**例5.** 求 $\displaystyle I = \int_{0}^{\frac{\pi}{2}} \frac{\sin^p x}{\sin^p + \cos^p x} dx$
+
+令 $\displaystyle x = \frac{\pi}{2} - t$：
+
+$$
+\begin{array}{ll}
+    \displaystyle \int_{0}^{\frac{\pi}{2}} \frac{\sin^p x}{\sin^p x + \cos^p x} dx 
+    &= \displaystyle \int_{0}^{\frac{\pi}{2}} \frac{\sin^p (\frac{\pi}{2} - t)}{\sin^p (\frac{\pi}{2} - t) + \cos^p (\frac{\pi}{2} - t)} dt \\
+    &= \displaystyle \int_{0}^{\frac{\pi}{2}} \frac{\cos^p t}{\cos^p t + \sin^p t} dt \\
+    &= \displaystyle \int_{0}^{\frac{\pi}{2}} \frac{\cos^p x}{\cos^p x + \sin^p x} dx
+\end{array}
+$$
+
+则：
+
+$$
+\begin{array}{ll}
+    \displaystyle \int_{0}^{\frac{\pi}{2}} \frac{\sin^p x}{\sin^p x + \cos^p x} dx 
+    &= \displaystyle \frac{1}{2}(\int_{0}^{\frac{\pi}{2}} \frac{\sin^p x}{\sin^p x + \cos^p x} dx + \int_{0}^{\frac{\pi}{2}} \frac{\cos^p x}{\cos^p x + \sin^p x} dx) \\
+    &= \displaystyle \frac{1}{2} \int_{0}^{\frac{\pi}{2}} \frac{\sin^p x + \cos^p x}{\sin^p x + \cos^p x} dx \\
+    &= \displaystyle \frac{\pi}{4}
+\end{array}
+$$
+
+## 变限积分
+
+### 变限积分的性质
+
+#### 连续性
+
+根据微积分基本定理的前半部分，若 $f$ 是区间 $[a, b]$ 上的连续函数，则 $\displaystyle F(x) = \int_a^x f(t) dt$ 在 $[a, b]$ 上是连续的。
+
+#### 可导性
+
+根据微积分基本定理的前半部分，若 $f$ 是区间 $[a, b]$ 上的连续函数，则 $\displaystyle F(x) = \int_a^x f(t) dt$ 在 $(a, b)$ 上是可微的。
+
+如果 $f$ 不是区间 $[a, b]$ 上的连续函数，但是区间 $[a, b]$ 上的可积函数，则：
+- 在 $f$ 的可去间断点 $x_0$ 处， $\displaystyle F(x) = \int_a^x f(t) dt$ 可导，$\displaystyle F'(x_0) = \lim_{x\rightarrow x_0} f(x)$。
+- 在 $f$ 的跳跃间断点 $x_0$ 处， $\displaystyle F(x) = \int_a^x f(t) dt$ 连续但不可导，$\displaystyle F'_-(x_0) = \lim_{x\rightarrow x_0^-} f(x)$，$\displaystyle F'_+(x_0) = \lim_{x\rightarrow x_0^+} f(x)$。
+
+借助变限积分 $\displaystyle \int_0^x f(t) dt$ 的几何意义就能方便地记忆上面（有关第一类间断点的）结论。
+
+可能产生误解的地方在于，从几何意义上看，函数 $\displaystyle F(x) = \int_0^x f(t) dt$ 是连续的，但它仍然可能是不可导的，就像 $F(x) = |x|$ 在 $x = 0$ 的情况一般。
+
+另外，几何直觉上的光滑*曲线*对应的是导函数连续，即 $f(x)$ 是光滑的，就是 $f'(x)$ 是连续的。
+
+有关 $f$ 的震荡间断点处 $\displaystyle \int_a^x f(t) dt$ 的连续性、可导性问题），参见：
+
+[Integral of functions that have oscillating discontinuous points(not finite) aren't differentiable? - StackExchange](https://math.stackexchange.com/questions/4533179/integral-of-functions-that-have-oscillating-discontinuous-pointsnot-finite-are)
+
+[The primitive of a discontinuous function? - StackExchange](https://math.stackexchange.com/questions/95700/the-primitive-of-a-discontinuous-function)
+
+[How to prove the continuity of [integral with variable bounds of non-continuous function] at essential (but not infinite) discontinuity point? - StackExchange](https://math.stackexchange.com/questions/4886706/how-to-prove-the-continuity-of-integral-with-variable-bounds-of-non-continuous)
+
+#### 奇偶性
+
+与导函数奇偶性变换规律一致。
+
+设 $f(x)$ 是连续函数，若 $f(x)$ 是偶函数，则 $\displaystyle F(x) = \int_0^x f(t) dt$ 是奇函数。
+
+若 $f(x)$ 是奇函数，则 $\displaystyle F(x) = \int_0^x f(t) dt$ 是偶函数，并且对于任意实数 $a$， $\displaystyle F(x) = \int_a^x f(t) dt$ 也是偶函数。
+
+### 变限积分的导数计算
+
+设法利用微积分基本定理。
+
+利用换元法分离难以分离的积分变量。例如：

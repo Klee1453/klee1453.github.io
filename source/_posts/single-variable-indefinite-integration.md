@@ -60,7 +60,7 @@ $$
 \end{array}
 $$
 
-在上面的积分中，如果我们定义 $\displaystyle \int \frac{\cos x}{x} dx = \Ci(x)$（实际上三角积分函数 $\Ci(x)$ 是通过变上限积分定义的），那么我们就可以用它来计算其他的一些不存在初等函数解的不定积分，例如：
+在上面的积分中，如果我们定义 $\displaystyle \int \frac{\cos x}{x} dx = \Ci(x) + C$（实际上三角积分函数 $\Ci(x)$ 是通过变上限积分定义的），那么我们就可以用它来计算其他的一些不存在初等函数解的不定积分，例如：
 
 $$
 \begin{array}{ll}
@@ -69,7 +69,7 @@ $$
 
     &= \displaystyle x\sin\frac{1}{x} - \int x \cos\frac{1}{x} d\frac{1}{x} \\
     &= \displaystyle x\sin\frac{1}{x} - \int \frac{\cos\frac{1}{x}}{\frac{1}{x}} d\frac{1}{x} \\
-    &= \displaystyle x\sin\frac{1}{x} - \Ci(x)
+    &= \displaystyle x\sin\frac{1}{x} - \Ci(\frac{1}{x})
 \end{array}
 $$
 

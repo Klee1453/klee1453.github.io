@@ -143,21 +143,27 @@ Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (s
 
 ## About Byzantine history
 
-在 <bilibili.com> 入门罗马史。
+### 君士坦丁七世「生于紫室者」《典议论》
+
+### 收藏夹
+
+<https://www.bilibili.com> 上与罗马有关的历史视频。
 
 罗马共和国史：
 
 [【罗马史合集】罗马是如何从城邦变成帝国的？ - 训练有素的将军](https://www.bilibili.com/video/BV1wd4y1h7pP/)
 
-元首制时期：
+AD 37 - AD 532：
 
-三世纪危机：
-
-多米那特制时期：
+暂缺。
 
 查士丁尼王朝：
 
 [【合集】重现帝国荣光！3个小时看完罗马传奇统帅贝利撒留的一生 - 老喵猫喵](https://www.bilibili.com/video/BV1834y1o7eW/)
+
+AD 565 - AD 641：
+
+暂缺。
 
 希拉克略王朝 & 二十年无政府时期：
 
@@ -171,7 +177,9 @@ Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (s
 
 [合集·第二次圣像破坏运动（C.E.802-867） - 青悠闲人](https://space.bilibili.com/358349453/channel/seriesdetail?sid=2603754)
 
-马其顿王朝：
+AD 867 - AD 1025：
+
+暂缺。
 
 杜卡斯王朝：
 

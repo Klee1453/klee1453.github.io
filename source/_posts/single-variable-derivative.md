@@ -89,6 +89,29 @@ $f(x)$ 处处可导，然而 $\displaystyle \lim_{x \rightarrow 0}f'(x)$ 却不�
 
 上面的结论是基于洛必达后极限需要存在的要求，以及函数连续时，可以直接利用 $\displaystyle \lim_{x\rightarrow x_0}f(x) = f(x_0)$ 求极限的性质。然而上面的两个结论并非在所有情况下一定是最恰当的，它实际上缩小了洛必达的可用范围。
 
+**可导函数的导函数不一定连续** 最著名的例子是下面的反例，在这个例子中，$f(x)$ 处处可导，而 $\displaystyle \lim_{x \rightarrow 0}f'(x)$ 不存在，自然 $f'(x)$ 在 $x = 0$ 不连续：
+
+$$
+\begin{array}{ccc}
+f(x) = 
+\left\{ \begin{array}{l}
+\displaystyle x^2 \sin \frac{1}{x}  & (x \neq 0) \\
+\displaystyle 0 & (x = 0)
+\end{array} \right.
+&,&
+f'(x) = 
+\left\{ \begin{array}{l}
+\displaystyle 2x \sin \frac{1}{x} - \cos \frac{1}{x}  & (x \neq 0) \\
+\displaystyle 0 & (x = 0)
+\end{array} \right.
+\end{array}
+$$
+
+实际上，根据[达布定理](https://en.wikipedia.org/wiki/Darboux%27s_theorem_(analysis))，如果 $f$ 是一个可导函数，并且其导数 $f'$ 不连续，能够造成其导数 $f'$ 不连续的唯一可能是极限 $\displaystyle \lim_{x\rightarrow a}f'(x)$ 不存在。
+
+参见：
+<https://math.stackexchange.com/questions/3069969/can-fc-exist-if-fx-is-not-continuous-at-c>
+
 ### 基本初等函数的导函数
 
 $$
