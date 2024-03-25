@@ -189,7 +189,7 @@ I_n = \int_0^{\frac{\pi}{2}} \sin^n x dx = \int_0^{\frac{\pi}{2}} \cos^n x dx =
 \end{array} \right. 
 $$
 
-现证明 $I_n = \int_0^{\frac{\pi}{2}} \sin^n x dx$ 的部分：
+先证明 $\displaystyle I_n = \int_0^{\frac{\pi}{2}} \sin^n x dx$ 的部分：
 
 $$
 \begin{array}{rl}
