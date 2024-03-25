@@ -173,7 +173,59 @@ $$
 
 ### 定积分的分部积分法
 
+若 $u = u(x)$，$v = v(x)$ 在 $[a, b]$ 上具有连续导数，则：
 
+$$
+\int_a^b u dv = uv |_a^b - \int_a^b v du
+$$
+
+**例2.** 证明~~比你们不知道高到哪里去了~~华莱士公式，即：
+
+$$
+I_n = \int_0^{\frac{\pi}{2}} \sin^n x dx = \int_0^{\frac{\pi}{2}} \cos^n x dx =
+\left\{ \begin{array}{l}
+    \displaystyle \frac{n - 1}{n} \cdot \frac{n - 3}{n - 2} \cdots \frac{2}{1} \cdot \frac{\pi}{2}  & (n \in \{2, 4, 6, \dots\}) \\
+    \displaystyle \frac{n - 1}{n} \cdot \frac{n - 3}{n - 2} \cdots \frac{3}{2}                      & (n \in \{1, 3, 5, \dots\})
+\end{array} \right. 
+$$
+
+现证明 $I_n = \int_0^{\frac{\pi}{2}} \sin^n x dx$ 的部分：
+
+$$
+\begin{array}{rl}
+    \displaystyle \boxed{I_n} = \int_0^{\frac{\pi}{2}} \sin^n x dx 
+    &= \displaystyle -\int_0^{\frac{\pi}{2}} \sin^{n - 1}x d\cos x  \\
+    &= \displaystyle -\sin^{n - 1}x\cos x |_{0}^{\frac{\pi}{2}} + \int_0^{\frac{\pi}{2}} \cos x d\sin^{n - 1}x \\
+    &= \displaystyle -0 + \int_0^{\frac{\pi}{2}} \cos x (n - 1)\sin^{n - 2}x \cos x dx\\
+    &= \displaystyle (n - 1)\int_0^{\frac{\pi}{2}}(1 - \sin^2 x)\sin^{n - 2}x dx \\
+    &= \displaystyle (n - 1)[\int_0^{\frac{\pi}{2}}\sin^2 x\sin^{n - 2}x dx - \int_0^{\frac{\pi}{2}} \sin^{n}x dx] \\
+    &\boxed{\displaystyle (n - 1)I_{n - 2} - (n - 1)I_{n}}
+\end{array}
+$$
+
+根据上面导出的递推公式 $\displaystyle I_n = \frac{n - 1}{n} I_{n - 2}$，原积分可以递归地计算。下面计算递归的终止情形：
+
+$$
+\begin{array}{rl}
+    \displaystyle I_1 = \int_0^{\frac{\pi}{2}} \sin x dx 
+    &= \displaystyle -\cos x |_0^{\frac{\pi}{2}} \\
+    &= \displaystyle 1 \\ \\
+
+    \displaystyle I_2 = \int_0^{\frac{\pi}{2}} \sin^2 x dx 
+    &= \displaystyle \frac{2}{1}(\int_0^{\frac{\pi}{2}} \sin^2 x dx + \int_0^{\frac{\pi}{2}} \cos^2 x dx) \\
+    &= \displaystyle \frac{2}{1} \cdot \frac{\pi}{2}
+\end{array}
+$$
+
+而证明 $\displaystyle \int_0^{\frac{\pi}{2}} \sin^n x dx = \int_0^{\frac{\pi}{2}} \cos^n x dx$ 只需要令 $\displaystyle x = \frac{\pi}{2} - t$ 即可得到：
+
+$$
+\begin{array}{rl}
+    \displaystyle \int_0^{\frac{\pi}{2}} \sin^n x dx 
+    &= \displaystyle \int_{\frac{\pi}{2} - 0}^{\frac{\pi}{2} - \frac{\pi}{2}} \sin^n (\frac{\pi}{2} - t) d(\frac{\pi}{2} - t) \\
+    &= \displaystyle \int_{0}^{\frac{\pi}{2}} \cos^n t dt & \blacksquare
+\end{array}
+$$
 
 ### 区间复现法
 
@@ -285,6 +337,42 @@ $$
 
 [How to prove the continuity of [integral with variable bounds of non-continuous function] at essential (but not infinite) discontinuity point? - StackExchange](https://math.stackexchange.com/questions/4886706/how-to-prove-the-continuity-of-integral-with-variable-bounds-of-non-continuous)
 
+实际上，只要 $f(x)$ 是有界的，就一定有函数 $\displaystyle F(x) = \int_0^x f(t) dt$ 是连续的。下面给出证明：
+
+*证明.* 欲证 $F(x)$ 在 $x_0$ 连续，即证 $\displaystyle \lim_{x\rightarrow x_0}F(x) = x_0$，根据极限的 $\varepsilon-\delta$ 定义，这个极限式可以改写为：
+
+$$
+\begin{array}{c}
+    \forall \varepsilon > 0,\quad \exists \delta > 0 & s.t. & \forall x \in (x_0 - \delta, x_0 + \delta),\quad |F(x) - F(x_0)| < \varepsilon
+\end{array}
+$$
+
+我们可以证明，对于任意的可积函数 $g(x)$ 及其一个原函数 $G(x)$，有：
+
+$$
+|G(x_1) - G(x_2)| = |\int_{x_1}^{x_2} g(x) dx| \leq (x_2 - x_1) \max_{x\in (x_1, x_2)} |g(x)| 
+$$
+
+我们对 $[x, x_0]$ 应用这个不等式：
+
+$$
+|F(x) - F(x_0)| \leq (x_0 - x) \max_{x\in D_f} |f(x)| 
+$$
+
+对于任意给定的 $\varepsilon > 0$，令 $\displaystyle (x_0 - x) \max_{x\in D_f} |f(x)| = \varepsilon$，这意味着，我们找到了邻域的（一侧）边界 $\displaystyle x_a = x_0 - \frac{\displaystyle \max_{x\in D_f} |f(x)|}{\varepsilon}$，在这个边界上，有：
+
+$$
+|F(x_a) - F(x_0)| \leq (x_0 - x_a) \max_{x\in D_f} |f(x)| = \varepsilon
+$$
+
+而对于 $x \in (x_a, x_0)$ 的所有 $x$，我们都有：
+
+$$
+|F(x) - F(x_0)| \leq (x_0 - x) \max_{x\in D_f} |f(x)| < (x_0 - x_a) \max_{x\in D_f} |f(x)| = \varepsilon
+$$
+
+对于邻域的另一侧，我们也能以相同的方式找到边界 $x_b$，这样，我们就能找到上面极限式中所需要的 $\delta$：在邻域 $U(x_0, \delta)$ 内，一定有 $|F(x) - F(x_0)| < \varepsilon$，这也就证明了 $\displaystyle F(x) = \int_0^x f(t) dt$ 在 $x_0$ 的连续性。$\blacksquare$
+
 #### 奇偶性
 
 与导函数奇偶性变换规律一致。
@@ -297,4 +385,100 @@ $$
 
 设法利用微积分基本定理。
 
-利用换元法分离难以分离的积分变量。例如：
+利用换元法处理积分上下限不是 $\displaystyle \int_a^x$ 的情况。
+
+对于积分 $\displaystyle \int_a^{\varphi(x)} f(t) dt$：
+
+对 $F(\varphi (x)) = \displaystyle \int_a^{\varphi(x)} f(t) dt$ 使用微积分基本定理，有：
+
+$$
+\frac{d}{dx} \int_a^{\varphi(x)} f(t) dt = f[\varphi(x)] \cdot \varphi'(x)
+$$
+
+对于积分 $\displaystyle \int_{\psi(x)}^{\varphi(x)} f(t) dt$：
+
+先将其拆分为两个部分，分别使用换元法计算，则有：
+
+$$
+\begin{array}{rl}
+    \displaystyle \frac{d}{dx} \int_{\psi(x)}^{\varphi(x)} f(t) dt 
+    &=\displaystyle \frac{d}{dx} [\int_{a}^{\varphi(x)} f(t) dt + \int_{\psi(x)}^{a} f(t) dt] \\
+    &=\displaystyle \frac{d}{dx} [\int_{a}^{\varphi(x)} f(t) dt] - \frac{d}{dt}[\int_{a}^{\psi(x)} f(t) dt] \\
+    &=\displaystyle f[\varphi(x)] \cdot \varphi'(x) - f[\psi(x)] \cdot \psi'(x)
+\end{array}
+$$
+
+对于积分 $\displaystyle \int_{a}^{x} f(x, t) dt$ 较简单的情形，可以利用凑微分（第一类换元法）解决被积函数内包含 $x$ 的情况，例如：
+
+$$
+\begin{array}{rl}
+    \displaystyle \frac{d}{dx} \int_a^x \sin(x - t) dt
+    &= \displaystyle \frac{d}{dx} [-\int_a^x \sin(x - t) d(- t + x)] \\
+    &= \displaystyle -\sin x
+\end{array}
+$$
+
+一般地，对于 $\displaystyle \frac{d}{dx} \int_a^b f(x, y) dy$，如果 $f$ 在 $[a, b]\times [c, d]$ 连续，$f_x$ 在 $[a, b]$ *一致连续*，则可以交换求导符号 $\displaystyle \frac{d}{dx}$ 与积分号，有：
+
+$$
+\frac{d}{dx} \int_c^d f(x, y)dy = \int_c^d \frac{\partial f(x, y)}{\partial x} dy
+$$
+
+*证明.*
+
+$$
+\begin{array}{rl}
+    \displaystyle \frac{d}{dx} \int_c^d f(x, y)dy
+    &= \displaystyle \lim_{\Delta x\rightarrow 0} \frac{\int_c^d f(x + \Delta x, y)dy - \int_c^d f(x, y)dy}{\Delta x} \\
+    &= \displaystyle \lim_{\Delta x\rightarrow 0} \int_c^d \frac{f(x + \Delta x, y) - f(x, y)}{\Delta x} dy
+\end{array}
+$$
+
+由 $f$ 的连续性，使用拉格朗日中值定理，有：
+
+$$
+\begin{array}{rl}
+    \displaystyle \frac{d}{dx} \int_c^d f(x, y)dy
+    &= \displaystyle \lim_{\Delta x\rightarrow 0} \int_c^d \frac{f(x + \Delta x, y) - f(x, y)}{\Delta x} dy \\
+    &= \displaystyle \lim_{\Delta x\rightarrow 0} \int_c^d \frac{\partial f}{\partial x}(x + \theta \Delta x, y) dy,\quad \theta \in (0, 1)
+\end{array}
+$$
+
+由于 $f_x$ 在 $[a, b]$ *一致连续*，因此对于任意给定的 $\varepsilon > 0$，都存在 $\delta > 0$，使得当 $|\Delta x| < \delta$ 时，有：
+
+$$
+\displaystyle \Big \vert \frac{\partial f}{\partial x}(x + \theta \Delta x, y) - \frac{\partial f(x, y)}{\partial x} \Big \vert < \varepsilon 
+$$
+
+因此，对其在 $[c, d]$ 上积分，有：
+
+$$
+\displaystyle \int_c^d \Big \vert \frac{\partial f}{\partial x}(x + \theta \Delta x, y) - \frac{\partial f(x, y)}{\partial x} \Big \vert dy < (d - c)\varepsilon
+$$
+
+并且：
+
+$$
+\begin{array}{rl}
+    \displaystyle \Big \vert \int_c^d \frac{\partial f}{\partial x}(x + \theta \Delta x, y) dy -  \int_c^d \frac{\partial f(x, y)}{\partial x} dy \Big \vert
+    &= \displaystyle \Big \vert \int_c^d [\frac{\partial f}{\partial x}(x + \theta \Delta x, y) - \frac{\partial f(x, y)}{\partial x}] dy \Big \vert \\
+    &\leq \displaystyle \int_c^d \Big \vert \frac{\partial f}{\partial x}(x + \theta \Delta x, y) - \frac{\partial f(x, y)}{\partial x} \Big \vert dy\\
+    &< (d - c)\varepsilon
+\end{array}
+$$
+
+这就根据定义证明了等式左侧极限的值为 $\displaystyle \int_c^d \frac{\partial f(x, y)}{\partial x} dy$，原命题得证。$\blacksquare$
+
+参见：
+[含参量积分基础知识(1) 正常积分部分 - 知乎](https://zhuanlan.zhihu.com/p/436737350)
+[关于极限，求导，积分能否换序的讨论](https://zhuanlan.zhihu.com/p/667864334)
+
+更一般地，对于 $\displaystyle \int_{\psi(x)}^{\varphi(x)} f(x, t) dt$ ，如果 $f$ 在 $[a, b]\times [c, d]$ 连续，$f_x$ 在 $[a, b]$ *一致连续*，并且 $\varphi(x)$ 与 $\psi(x)$ 可导，将其视作复合函数 $H(x, \varphi(x), \psi(x))$ ，利用复合函数求导法则可以得到：
+
+$$
+\begin{array}{rl}
+    \displaystyle \frac{d}{dx} \int_{\psi(x)}^{\varphi(x)} f(x, t) dt 
+    &= \displaystyle \frac{\partial H}{\partial x} + \frac{\partial H}{\partial \varphi} \cdot \frac{\partial \varphi}{\partial x} + \frac{\partial H}{\partial \psi} \cdot \frac{\partial \psi}{\partial x} \\
+    &= \displaystyle \int_{\psi(x)}^{\varphi(x)} \frac{\partial f(x, t)}{\partial x} dt + f(x, \varphi(x)) \cdot \varphi'(x) + f(x, \psi(x)) \cdot \psi'(x)
+\end{array}
+$$
