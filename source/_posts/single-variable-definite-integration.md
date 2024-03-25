@@ -198,7 +198,7 @@ $$
     &= \displaystyle -\sin^{n - 1}x\cos x |_{0}^{\frac{\pi}{2}} + \int_0^{\frac{\pi}{2}} \cos x d\sin^{n - 1}x \\
     &= \displaystyle -0 + \int_0^{\frac{\pi}{2}} \cos x (n - 1)\sin^{n - 2}x \cos x dx\\
     &= \displaystyle (n - 1)\int_0^{\frac{\pi}{2}}(1 - \sin^2 x)\sin^{n - 2}x dx \\
-    &= \displaystyle (n - 1)[\int_0^{\frac{\pi}{2}}\sin^2 x\sin^{n - 2}x dx - \int_0^{\frac{\pi}{2}} \sin^{n}x dx] \\
+    &= \displaystyle (n - 1)[\int_0^{\frac{\pi}{2}}\sin^{n - 2}x dx - \int_0^{\frac{\pi}{2}} \sin^{n}x dx] \\
     &\boxed{\displaystyle (n - 1)I_{n - 2} - (n - 1)I_{n}}
 \end{array}
 $$
