@@ -184,8 +184,8 @@ $$
 $$
 I_n = \int_0^{\frac{\pi}{2}} \sin^n x dx = \int_0^{\frac{\pi}{2}} \cos^n x dx =
 \left\{ \begin{array}{l}
-    \displaystyle \frac{n - 1}{n} \cdot \frac{n - 3}{n - 2} \cdots \frac{2}{1} \cdot \frac{\pi}{2}  & (n \in \{2, 4, 6, \dots\}) \\
-    \displaystyle \frac{n - 1}{n} \cdot \frac{n - 3}{n - 2} \cdots \frac{3}{2}                      & (n \in \{1, 3, 5, \dots\})
+    \displaystyle \frac{n - 1}{n} \cdot \frac{n - 3}{n - 2} \cdots \frac{1}{2} \cdot \frac{\pi}{2}  & (n \in \{2, 4, 6, \dots\}) \\
+    \displaystyle \frac{n - 1}{n} \cdot \frac{n - 3}{n - 2} \cdots \frac{2}{3}                      & (n \in \{1, 3, 5, \dots\})
 \end{array} \right. 
 $$
 
@@ -212,8 +212,8 @@ $$
     &= \displaystyle 1 \\ \\
 
     \displaystyle I_2 = \int_0^{\frac{\pi}{2}} \sin^2 x dx 
-    &= \displaystyle \frac{2}{1}(\int_0^{\frac{\pi}{2}} \sin^2 x dx + \int_0^{\frac{\pi}{2}} \cos^2 x dx) \\
-    &= \displaystyle \frac{2}{1} \cdot \frac{\pi}{2}
+    &= \displaystyle \frac{1}{2}(\int_0^{\frac{\pi}{2}} \sin^2 x dx + \int_0^{\frac{\pi}{2}} \cos^2 x dx) \\
+    &= \displaystyle \frac{1}{2} \cdot \frac{\pi}{2}
 \end{array}
 $$
 
